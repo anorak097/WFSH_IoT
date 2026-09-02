@@ -18,6 +18,7 @@ layout: top-title
 color: dark
 ---
 ::title::
+
 <h1 style="font-size: 2.5rem; font-weight: bold;">What is IoT?</h1>
 
 ::content::
@@ -42,6 +43,7 @@ layout: top-title
 color: dark
 ---
 ::title::
+
 <h1 style="font-size: 2.5rem; font-weight: bold;">How it work?</h1>
 
 ::content::
@@ -64,6 +66,7 @@ layout: top-title
 color: dark
 ---
 ::title::
+
 <h1 style="font-size: 2.5rem; font-weight: bold;">MCU?</h1>
 
 ::content::
@@ -101,6 +104,26 @@ layout: top-title
 color: dark
 ---
 ::title::
-<h1 style="font-size: 2.5rem; font-weight: bold;">How it work?</h1>
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">要使用開發板需要有哪些能力</h1>
 
 ::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 66%; padding-right: 20px; box-sizing: border-box;">
+            <ul style="font-size: 2rem;">
+                <li>程式邏輯 (C++)</li>
+                <li>基礎電路知識</li>
+            </ul>
+            <div v-click="1">
+                <h2>BUT!<br>
+                程式邏輯還是要有，程式能力可以藉由 Blockly (積木化程式) 克服。<br>
+                過往需要反覆查找資料確認接線，現在也可以依靠 AI 跳過中間的過程。</h2>
+            </div>
+        </div>
+        <div style="width: 34%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizggLpSktWLtBC0bPawP1VYISrWrbp5n1dMCtUSzBSoTvP-UVQM8d86nwuLYbZdGaWG5ennI1Wz-hM9UJ5j2OodYlXvNPBnRJIQMVOuORqLff-vpPr-FBlyh8s8k9dbHD7CKildGtIT94/s800/computer_one-board_microcomputer.png">
+        </div>
+    </div>
+</div>
