@@ -127,3 +127,29 @@ color: dark
         </div>
     </div>
 </div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">課程中會使用的工具</h1>
+
+::content::
+
+<div style="font-size: 2rem">
+    整合開發環境
+    <ul>
+        <li><a href="https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE">Arduino IDE</a></li>
+    </ul>
+    接線模擬
+    <ul>
+        <li><a href="https://wokwi.com/projects/new/arduino-nano">Wokwi</a></li>
+    </ul>
+    blockly 程式
+    <ul>
+        <li><a href="https://www.tinkercad.com/dashboard">tinkercad</a></li>
+    </ul>
+</div>
