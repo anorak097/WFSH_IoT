@@ -12,10 +12,21 @@ neversink_slug: '物聯網課程教材'
 <h1 style="font-size: 5rem; font-weight: bold;">物聯網課程</h1>
 <!-- <h1 style="font-size: 5rem; margin-top: 0px; font-weight: bold;">#? ???</h1> -->
 
+
+---
+transition: slide-left
+layout: intro
+color: dark
+---
+
+<h1><Link to="w1">第一周教材</Link></h1>
+<h1><Link to="w2">第二周教材</Link></h1>
+
 ---
 transition: slide-left
 layout: top-title
 color: dark
+routeAlias: w1
 ---
 ::title::
 
@@ -139,7 +150,7 @@ color: dark
 
 ::content::
 
-<div style="font-size: 2rem">
+<div style="font-size: 1.8rem">
     整合開發環境
     <ul>
         <li><a href="https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE">Arduino IDE</a></li>
@@ -151,5 +162,58 @@ color: dark
     blockly 程式
     <ul>
         <li><a href="https://www.tinkercad.com/dashboard">tinkercad</a></li>
+        <li><a href="https://marketplace.visualstudio.com/items?itemName=Singular-Ray.singular-blockly">Singular Blockly (in Visual Studio Code)</a></li>
     </ul>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+routeAlias: w2
+---
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">感測器</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 66%; padding-right: 20px; box-sizing: border-box;">
+            <h2>如果把 MCU 當作大腦，感測器 (Sensor) 就等同於受器。<br>
+            常見的感測器有：按鈕開關、可變電阻、RFID 讀取器、紅外線接收器、人體紅外線感測器、超音波感測器、聲音感測器等、三軸感測器、雙軸按鍵搖桿......<br>
+            </h2>
+        </div>
+        <div style="width: 34%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPmlT7NIW40GepVavpKc4QvDSw_e9xV77P0us-r6tp2IOozgyjgxvzo7nGCpZJI-RWm6AK9zH4EnvpqOc0ViY1kN3V60lqbUeSpHfr03s4p2-ltZlFmHQp7YE7QbkdXko6hOR9XcmrWlRJ/s400/game_controller.png">
+            搖桿是融合許多感測器的經典例子
+        </div>
+    </div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">感測器介紹——RFID 讀取器</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 66%; padding-right: 20px; box-sizing: border-box;">
+            <h2>RFID 讀取器是透過發射無線電波，激活要讀取的標籤並接收標籤回傳的資料，標籤內的資料則通常以一個微小的晶片儲存。<br>
+            RFID 其掃描距離視不同的讀取器與標籤組合而定，被動式標籤最長距離可到十公尺左右 (超高頻 RFID)。<br>
+            RFID 常見的用法是利用標籤的不同 ID 區分不同人、車，如悠遊卡與 e-tag。<br>
+            也能用來判斷是否有目標經過，如防盜門。</h2>
+        </div>
+        <div style="width: 34%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLtIfis2XO3IW6ulFAM_N9vLiWIVN825Du-0G79AzoTmxbEc9f-4chonJjjyYM6PnZjpfAqtVEJ8fMgrBj62rf8TGxJTpJue4mFCnz2IjNyG78c9LDI5ICudBPVfAZKbXaK0bN9qEwhqD7/s400/rfid_card_reader_touch.png">
+        </div>
+    </div>
 </div>

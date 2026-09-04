@@ -5,3 +5,9 @@ dist
 .vite-inspect
 .remote-assets
 components.d.ts
+*/.agents
+*/.claude
+*/.pio
+*/.vscode
+*/.singular-blockly
+*/blockly/*
