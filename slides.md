@@ -262,7 +262,7 @@ color: dark
             使用超音波感測器與單色 LED 模擬倒車雷達運作
             </h2>
             <br>
-            <!-- <div v-click="1">
+            <div v-click="1">
                 <h2>
                 # 本日作業<br>
                 要求：<br>
@@ -273,7 +273,7 @@ color: dark
                 作業要求：<br>
                 繳交 wokwi 的 project.zip & 現場檢查運作
                 </h2>
-            </div> -->
+            </div>
         </div>
         <div style="width: 34%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBCsL6V3yKuxzCLEuypsRPl7szv-ZSpTaY6JOviPXhIVkQSoKiL1WWuedDtCQi18THkI1GoyJKfhEfUvPlgIZMT-ZX67IEbJQdVBf3ZSxXZ4jYRNuKLHPS81vN1-YHUjQwz-fASVzdvs0/s800/car_back4_hazard.png">
