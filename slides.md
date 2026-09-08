@@ -208,12 +208,75 @@ color: dark
     <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
         <div style="width: 66%; padding-right: 20px; box-sizing: border-box;">
             <h2>RFID 讀取器是透過發射無線電波，激活要讀取的標籤並接收標籤回傳的資料，標籤內的資料則通常以一個微小的晶片儲存。<br>
-            RFID 其掃描距離視不同的讀取器與標籤組合而定，被動式標籤最長距離可到十公尺左右 (超高頻 RFID)。<br>
+            RFID 掃描距離視不同的讀取器與標籤組合而定，被動式標籤最長距離可到十公尺左右 (超高頻 RFID)。<br>
             RFID 常見的用法是利用標籤的不同 ID 區分不同人、車，如悠遊卡與 e-tag。<br>
             也能用來判斷是否有目標經過，如防盜門。</h2>
         </div>
         <div style="width: 34%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLtIfis2XO3IW6ulFAM_N9vLiWIVN825Du-0G79AzoTmxbEc9f-4chonJjjyYM6PnZjpfAqtVEJ8fMgrBj62rf8TGxJTpJue4mFCnz2IjNyG78c9LDI5ICudBPVfAZKbXaK0bN9qEwhqD7/s400/rfid_card_reader_touch.png">
+        </div>
+    </div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">感測器介紹——超音波感測器</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 66%; padding-right: 20px; box-sizing: border-box;">
+            <h2>超音波感測器是透過聲波發射到收到回彈聲波的時間差估算距離。<br>
+            超音波感測器常見的用法是透過多方向的反覆偵測距離，描繪出特定方向的障礙物/牆面輪廓，如聲納。<br>
+            也能利用偵測到的不同距離，做出示警，如倒車雷達。</h2>
+        </div>
+        <div style="width: 34%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBCsL6V3yKuxzCLEuypsRPl7szv-ZSpTaY6JOviPXhIVkQSoKiL1WWuedDtCQi18THkI1GoyJKfhEfUvPlgIZMT-ZX67IEbJQdVBf3ZSxXZ4jYRNuKLHPS81vN1-YHUjQwz-fASVzdvs0/s800/car_back4_hazard.png">
+        </div>
+    </div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">超音波感測器實驗</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 66%; padding-right: 20px; box-sizing: border-box;">
+            <h2>
+            使用超音波感測器與單色 LED 模擬倒車雷達運作
+            </h2>
+            <br>
+            <!-- <div v-click="1">
+                <h2>
+                # 本日作業<br>
+                要求：<br>
+                持續(delay(50);)輸出距離(公分)<br>
+                綠燈在20公分以上長亮<br>
+                黃燈在10~20公分間長亮<br>
+                紅燈在10公分內快速閃爍<br>(建議delay(); > 100ms)<br>
+                作業要求：<br>
+                繳交 wokwi 的 project.zip & 現場檢查運作
+                </h2>
+            </div> -->
+        </div>
+        <div style="width: 34%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBCsL6V3yKuxzCLEuypsRPl7szv-ZSpTaY6JOviPXhIVkQSoKiL1WWuedDtCQi18THkI1GoyJKfhEfUvPlgIZMT-ZX67IEbJQdVBf3ZSxXZ4jYRNuKLHPS81vN1-YHUjQwz-fASVzdvs0/s800/car_back4_hazard.png">
         </div>
     </div>
 </div>
