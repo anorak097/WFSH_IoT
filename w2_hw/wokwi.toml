@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = 'build\arduino.avr.nano\project.ino.hex'
+elf = 'build\arduino.avr.nano\project.ino.elf'

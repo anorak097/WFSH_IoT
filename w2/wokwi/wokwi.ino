@@ -11,7 +11,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   distance = ultrasonic.read(CM);
-  Serial.println(distance);
+  Serial.print(distance);
   if (distance <= 10){
     digitalWrite(2, HIGH);
     delay(200);
@@ -24,4 +24,5 @@ void loop() {
     digitalWrite(2, LOW);
     delay(400);  
   }
+  delay(100);
 }
