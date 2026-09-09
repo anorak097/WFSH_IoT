@@ -1,0 +1,36 @@
+{
+  "workspace": {
+    "blocks": {
+      "languageVersion": 0,
+      "blocks": [
+        {
+          "type": "arduino_setup_loop",
+          "id": "Q}bxVv%/@I-Zrucg2GLm",
+          "x": -1,
+          "y": 118,
+          "deletable": false,
+          "inputs": {
+            "SETUP": {
+              "block": {
+                "type": "ultrasonic_sensor",
+                "id": "*93Vj74,V5-PzbwPLCq9",
+                "fields": {
+                  "TRIG_PIN": "3",
+                  "ECHO_PIN": "4",
+                  "USE_INTERRUPT": false
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "variables": [
+      {
+        "name": "i",
+        "id": "_edD9en+Om@m9q:E_*(."
+      }
+    ]
+  },
+  "board": "uno"
+}

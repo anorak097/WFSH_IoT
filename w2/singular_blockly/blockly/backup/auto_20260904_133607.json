@@ -1,0 +1,296 @@
+{
+  "workspace": {
+    "blocks": {
+      "languageVersion": 0,
+      "blocks": [
+        {
+          "type": "arduino_setup_loop",
+          "id": "Q}bxVv%/@I-Zrucg2GLm",
+          "x": 16,
+          "y": 106,
+          "deletable": false,
+          "inputs": {
+            "SETUP": {
+              "block": {
+                "type": "ultrasonic_sensor",
+                "id": "*93Vj74,V5-PzbwPLCq9",
+                "fields": {
+                  "TRIG_PIN": "3",
+                  "ECHO_PIN": "4",
+                  "USE_INTERRUPT": false
+                },
+                "next": {
+                  "block": {
+                    "type": "arduino_pin_mode",
+                    "id": "R{x-7CJUE%$zr!kUK4|#",
+                    "fields": {
+                      "PIN": "2",
+                      "MODE": "OUTPUT"
+                    }
+                  }
+                }
+              }
+            },
+            "LOOP": {
+              "block": {
+                "type": "variables_set",
+                "id": "O~s/L^t5BW8RX@}Xj)H#",
+                "fields": {
+                  "VAR": {
+                    "id": "_edD9en+Om@m9q:E_*(."
+                  }
+                },
+                "inputs": {
+                  "VALUE": {
+                    "block": {
+                      "type": "ultrasonic_read",
+                      "id": "vzv+7+?p??G#!2pWek8]"
+                    }
+                  }
+                },
+                "next": {
+                  "block": {
+                    "type": "controls_if",
+                    "id": "_vR%sS/aOAioNF#NzEcC",
+                    "extraState": {
+                      "elseIfCount": 1
+                    },
+                    "inputs": {
+                      "IF0": {
+                        "block": {
+                          "type": "logic_compare",
+                          "id": "H/^LdWC!.q[+@-|B6)Qe",
+                          "fields": {
+                            "OP": "LTE"
+                          },
+                          "inputs": {
+                            "A": {
+                              "block": {
+                                "type": "variables_get",
+                                "id": "1,x:!h/zM[e}qhP!G0.O",
+                                "fields": {
+                                  "VAR": {
+                                    "id": "_edD9en+Om@m9q:E_*(."
+                                  }
+                                }
+                              }
+                            },
+                            "B": {
+                              "block": {
+                                "type": "math_number",
+                                "id": "X4evj08mZ(_*f;(#7Pl*",
+                                "fields": {
+                                  "NUM": 10
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "DO0": {
+                        "block": {
+                          "type": "arduino_digital_write",
+                          "id": "c(k=y#%O@{1}YY_RjHf$",
+                          "fields": {
+                            "PIN": "2"
+                          },
+                          "inputs": {
+                            "VALUE": {
+                              "shadow": {
+                                "type": "arduino_level",
+                                "id": "5OaX)b[cg)k0rAYSJinZ",
+                                "fields": {
+                                  "LEVEL": "HIGH"
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "arduino_delay",
+                              "id": "7#B^EeOcNSJoLgm!,|n{",
+                              "fields": {
+                                "TIME": 200
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "arduino_digital_write",
+                                  "id": "|`;YLo3]YX2U.l:WE8*s",
+                                  "fields": {
+                                    "PIN": "2"
+                                  },
+                                  "inputs": {
+                                    "VALUE": {
+                                      "shadow": {
+                                        "type": "arduino_level",
+                                        "id": "nY9h_N7^+WQ58|.6nc)6",
+                                        "fields": {
+                                          "LEVEL": "LOW"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "arduino_delay",
+                                      "id": "~]-`R?%Ld8s_,;n$$wjx",
+                                      "fields": {
+                                        "TIME": 200
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "IF1": {
+                        "block": {
+                          "type": "logic_operation",
+                          "id": "x?vHu`-[D4NG-r9!l2iM",
+                          "fields": {
+                            "OP": "AND"
+                          },
+                          "inputs": {
+                            "A": {
+                              "block": {
+                                "type": "logic_compare",
+                                "id": "qEt]q^MA:zgJ*5_#6l}-",
+                                "fields": {
+                                  "OP": "GT"
+                                },
+                                "inputs": {
+                                  "A": {
+                                    "block": {
+                                      "type": "variables_get",
+                                      "id": "$C+_GT@|,M+gaIPg},Wm",
+                                      "fields": {
+                                        "VAR": {
+                                          "id": "_edD9en+Om@m9q:E_*(."
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "B": {
+                                    "block": {
+                                      "type": "math_number",
+                                      "id": "5aNiq+yTn)l(Rg%gUiZP",
+                                      "fields": {
+                                        "NUM": 10
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "B": {
+                              "block": {
+                                "type": "logic_compare",
+                                "id": "`X{[_W;FiD~]C[NJ,s4L",
+                                "fields": {
+                                  "OP": "LTE"
+                                },
+                                "inputs": {
+                                  "A": {
+                                    "block": {
+                                      "type": "variables_get",
+                                      "id": "BRciiyAo_M]fIib}y^UE",
+                                      "fields": {
+                                        "VAR": {
+                                          "id": "_edD9en+Om@m9q:E_*(."
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "B": {
+                                    "block": {
+                                      "type": "math_number",
+                                      "id": "zT]n19!-N0o855,@Yene",
+                                      "fields": {
+                                        "NUM": 30
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "DO1": {
+                        "block": {
+                          "type": "arduino_digital_write",
+                          "id": "yLVu,_{g:k6z$mFTW/]q",
+                          "fields": {
+                            "PIN": "2"
+                          },
+                          "inputs": {
+                            "VALUE": {
+                              "shadow": {
+                                "type": "arduino_level",
+                                "id": "8eyD@,[sPVMY*!?=Dg+X",
+                                "fields": {
+                                  "LEVEL": "HIGH"
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "arduino_delay",
+                              "id": "%X;@;PC7L*a5d#4wQQA^",
+                              "fields": {
+                                "TIME": 400
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "arduino_digital_write",
+                                  "id": "FTB))kSu]$0a(T=MHNOk",
+                                  "fields": {
+                                    "PIN": "2"
+                                  },
+                                  "inputs": {
+                                    "VALUE": {
+                                      "shadow": {
+                                        "type": "arduino_level",
+                                        "id": "oWW_tluZvx)K_o7p|ygD",
+                                        "fields": {
+                                          "LEVEL": "LOW"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "arduino_delay",
+                                      "id": "lIUy[u3*`qy8|K6XmfmU",
+                                      "fields": {
+                                        "TIME": 400
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "variables": [
+      {
+        "name": "distance",
+        "id": "_edD9en+Om@m9q:E_*(."
+      }
+    ]
+  },
+  "board": "uno"
+}
