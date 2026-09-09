@@ -207,7 +207,7 @@ color: dark
     <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
         <div style="width: 66%; padding-right: 20px; box-sizing: border-box;">
             <h2>感測器在一個裝置中通常會利用電位差、計時器等，<span style="background:#FFE45E; color:black;">給予微控制器不同的數值</span>，微控制器再根據不同的數值進行對應的行為。<br>
-            現今的開發板會有<span style="background:#FFE45E; color:black;">針對不同 Sensor 的專屬程式/函式庫 (Library)</span>，函式庫會根據 Sensor 的特性，<span style="background:#FFE45E; color:black;">使讀取到的數值變成通用的數值單位</span>或是始控制變簡單。
+            現今的開發板會有<span style="background:#FFE45E; color:black;">針對不同 Sensor 的專屬程式/函式庫 (Library)</span>，函式庫會根據 Sensor 的特性，<span style="background:#FFE45E; color:black;">使讀取到的數值變成通用的數值單位</span>或是使控制變簡單。
             </h2>
         </div>
         <div style="width: 34%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
