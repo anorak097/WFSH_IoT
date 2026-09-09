@@ -181,13 +181,37 @@ routeAlias: w2
 <div style="margin-bottom: 10px;">
     <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
         <div style="width: 66%; padding-right: 20px; box-sizing: border-box;">
-            <h2>如果把 MCU 當作大腦，感測器 (Sensor) 就等同於受器。<br>
+            <h2>如果把 <span style="background:#FFE45E; color:black;">MCU 當作大腦</span>，感測器 (Sensor) 就等同於<span style="background:#FFE45E; color:black;">受器</span>。<br>
             常見的感測器有：按鈕開關、可變電阻、RFID 讀取器、紅外線接收器、人體紅外線感測器、超音波感測器、聲音感測器等、三軸感測器、雙軸按鍵搖桿......<br>
             </h2>
         </div>
         <div style="width: 34%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPmlT7NIW40GepVavpKc4QvDSw_e9xV77P0us-r6tp2IOozgyjgxvzo7nGCpZJI-RWm6AK9zH4EnvpqOc0ViY1kN3V60lqbUeSpHfr03s4p2-ltZlFmHQp7YE7QbkdXko6hOR9XcmrWlRJ/s400/game_controller.png">
             搖桿是融合許多感測器的經典例子
+        </div>
+    </div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">感測器的作用</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 66%; padding-right: 20px; box-sizing: border-box;">
+            <h2>感測器在一個裝置中通常會利用電位差、計時器等，<span style="background:#FFE45E; color:black;">給予微控制器不同的數值</span>，微控制器再根據不同的數值進行對應的行為。<br>
+            現今的開發板會有<span style="background:#FFE45E; color:black;">針對不同 Sensor 的專屬程式/函式庫 (Library)</span>，函式庫會根據 Sensor 的特性，<span style="background:#FFE45E; color:black;">使讀取到的數值變成通用的數值單位</span>或是始控制變簡單。
+            </h2>
+        </div>
+        <div style="width: 34%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimjjYnxsvJFJ_gToa9_Z8MJsOOw5CtHmCcKziDUmwCp-1IQ4CPx7j2L-pI1IizKvafONVMCzyaL0ue4m4lZLRSGCiTcgOqcyXIrl0LDutOeqDOehNqJpjA7U10LO48tUEbudrWAvANVWk/s800/character_program_smart.png">
         </div>
     </div>
 </div>
@@ -207,10 +231,10 @@ color: dark
 <div style="margin-bottom: 10px;">
     <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
         <div style="width: 66%; padding-right: 20px; box-sizing: border-box;">
-            <h2>RFID 讀取器是透過發射無線電波，激活要讀取的標籤並接收標籤回傳的資料，標籤內的資料則通常以一個微小的晶片儲存。<br>
+            <h2>RFID 讀取器是透過發射<span style="background:#FFE45E; color:black;">無線電波</span>，激活要讀取的(無源)標籤並<span style="background:#FFE45E; color:black;">接收標籤回傳的資料</span>，標籤內的<span style="background:#FFE45E; color:black;">資料則通常以一個微小的晶片儲存</span>。<br>
             RFID 掃描距離視不同的讀取器與標籤組合而定，被動式標籤最長距離可到十公尺左右 (超高頻 RFID)。<br>
-            RFID 常見的用法是利用標籤的不同 ID 區分不同人、車，如悠遊卡與 e-tag。<br>
-            也能用來判斷是否有目標經過，如防盜門。</h2>
+            RFID 常見的用法是<span style="background:#FFE45E; color:black;">利用標籤的不同 ID 區分</span>不同人、車，如悠遊卡與 e-tag。<br>
+            也能用來<span style="background:#FFE45E; color:black;">判斷是否有目標經過/靠近</span>，如防盜門。</h2>
         </div>
         <div style="width: 34%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLtIfis2XO3IW6ulFAM_N9vLiWIVN825Du-0G79AzoTmxbEc9f-4chonJjjyYM6PnZjpfAqtVEJ8fMgrBj62rf8TGxJTpJue4mFCnz2IjNyG78c9LDI5ICudBPVfAZKbXaK0bN9qEwhqD7/s400/rfid_card_reader_touch.png">
@@ -233,9 +257,9 @@ color: dark
 <div style="margin-bottom: 10px;">
     <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
         <div style="width: 66%; padding-right: 20px; box-sizing: border-box;">
-            <h2>超音波感測器是透過聲波發射到收到回彈聲波的時間差估算距離。<br>
-            超音波感測器常見的用法是透過多方向的反覆偵測距離，描繪出特定方向的障礙物/牆面輪廓，如聲納。<br>
-            也能利用偵測到的不同距離，做出示警，如倒車雷達。</h2>
+            <h2>超音波感測器是透過<span style="background:#FFE45E; color:black;">發射聲波和接收回彈聲波的時間差估算距離</span>。<br>
+            超音波感測器常見的用法是透過多方向的反覆偵測距離，<span style="background:#FFE45E; color:black;">描繪出特定方向的障礙物/牆面輪廓</span>，如聲納。<br>
+            也能利用偵測到的距離變化，做出示警，如倒車雷達。</h2>
         </div>
         <div style="width: 34%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBCsL6V3yKuxzCLEuypsRPl7szv-ZSpTaY6JOviPXhIVkQSoKiL1WWuedDtCQi18THkI1GoyJKfhEfUvPlgIZMT-ZX67IEbJQdVBf3ZSxXZ4jYRNuKLHPS81vN1-YHUjQwz-fASVzdvs0/s800/car_back4_hazard.png">
@@ -266,7 +290,7 @@ color: dark
                 <h2>
                 # 本日作業<br>
                 要求：<br>
-                持續(delay(50);)輸出距離(公分)<br>
+                持續(delay(100);)輸出距離(公分)<br>
                 綠燈在20公分以上長亮<br>
                 黃燈在10~20公分間長亮<br>
                 紅燈在10公分內快速閃爍<br>(建議delay(); > 100ms)<br>
