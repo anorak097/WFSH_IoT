@@ -286,21 +286,34 @@ color: dark
             使用超音波感測器與單色 LED 模擬倒車雷達運作
             </h2>
             <br>
-            <div v-click="1">
-                <h2>
-                # 本日作業<br>
-                要求：<br>
-                持續(delay(100);)輸出距離(公分)<br>
-                綠燈在20公分以上長亮<br>
-                黃燈在10~20公分間長亮<br>
-                紅燈在10公分內快速閃爍<br>(建議delay(); > 100ms)<br>
-                作業要求：<br>
-                繳交 wokwi 的 project.zip & 現場檢查運作
-                </h2>
-            </div>
         </div>
         <div style="width: 34%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBCsL6V3yKuxzCLEuypsRPl7szv-ZSpTaY6JOviPXhIVkQSoKiL1WWuedDtCQi18THkI1GoyJKfhEfUvPlgIZMT-ZX67IEbJQdVBf3ZSxXZ4jYRNuKLHPS81vN1-YHUjQwz-fASVzdvs0/s800/car_back4_hazard.png">
         </div>
     </div>
 </div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">超音波感測器實作作業</h1>
+
+::content::
+
+<h2>
+# 本日作業<br>
+要求：<br>
+綠燈在20公分以上長亮<br>
+黃燈在10~20公分間長亮<br>
+紅燈在10公分內快速閃爍 <span style="background:#FFE45E; color:black;">(delay(150);)</span><br>
+作業要求：<br>
+接線：繳交 <span style="background:#FFE45E; color:black;">wokwi 的 diagram.json</span> (於下載的 project.zip 中)<br>
+程式：本次作業燒錄(上傳)的<span style="background:#FFE45E; color:black;">程式檔</span> (*使用 Arduino IDE 燒錄的為 .ino 檔，使用 Singular Blockly 燒錄的為 main.cpp 檔)<br>
+運作：<span style="background:#FFE45E; color:black;">現場檢查</span>運作<br><br>
+詳見 Classroom 中作業說明
+</h2>
