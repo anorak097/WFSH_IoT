@@ -283,9 +283,12 @@ color: dark
     <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
         <div style="width: 66%; padding-right: 20px; box-sizing: border-box;">
             <h2>
-            使用超音波感測器與單色 LED 模擬倒車雷達運作
+            使用超音波感測器與一顆單色 LED 模擬倒車雷達運作<br><br>
+            要求：<br>
+            LED燈在10公分內閃爍 <span style="background:#FFE45E; color:black;">(delay(200);)</span><br>
+            LED燈在10~30公分間閃爍更慢 <span style="background:#FFE45E; color:black;">(delay(400);)</span><br>
+            LED燈在30公分以上時不亮
             </h2>
-            <br>
         </div>
         <div style="width: 34%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBCsL6V3yKuxzCLEuypsRPl7szv-ZSpTaY6JOviPXhIVkQSoKiL1WWuedDtCQi18THkI1GoyJKfhEfUvPlgIZMT-ZX67IEbJQdVBf3ZSxXZ4jYRNuKLHPS81vN1-YHUjQwz-fASVzdvs0/s800/car_back4_hazard.png">
