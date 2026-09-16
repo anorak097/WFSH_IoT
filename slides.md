@@ -17,10 +17,12 @@ neversink_slug: '物聯網課程教材'
 transition: slide-left
 layout: intro
 color: dark
+routeAlias: Outline
 ---
 
 <h1><Link to="w1">第一周教材</Link></h1>
 <h1><Link to="w2">第二周教材</Link></h1>
+<h1><Link to="w3">第三周教材</Link></h1>
 
 ---
 transition: slide-left
@@ -292,6 +294,32 @@ color: dark
         </div>
         <div style="width: 34%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBCsL6V3yKuxzCLEuypsRPl7szv-ZSpTaY6JOviPXhIVkQSoKiL1WWuedDtCQi18THkI1GoyJKfhEfUvPlgIZMT-ZX67IEbJQdVBf3ZSxXZ4jYRNuKLHPS81vN1-YHUjQwz-fASVzdvs0/s800/car_back4_hazard.png">
+        </div>
+    </div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+routeAlias: w3
+---
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">執行器</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 66%; padding-right: 20px; box-sizing: border-box;">
+            <h2>如果把 <span style="background:#FFE45E; color:black;">MCU 當作大腦</span>，感測器 (Actuator) 就等同於<span style="background:#FFE45E; color:black;">動器</span>。<br>
+            常見的執行器有：LED、燈泡、蜂鳴器、喇叭、電磁閥、馬達......<br>
+            </h2>
+        </div>
+        <div style="width: 34%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhoClNQVMqWBWGB0qFeZSNdfGEDsDegwIRCd68SROxfz1Jrb9Y9lXs0zUQxl5kCTan0Jg8L8atVzx5tINGCiydZAXiWOnbpDE34RuDtC9YOZvMXd9iCiBJPBuz0FxnG5JiHZc4Wn8SnNJColIgTPpP2tbDotK3fFBNSSGzjFlhzv5j5_Q5suFchNiVerw/s778/restaurant_haizen_robot.png">
+            送餐機器人是融合許多執行器例子
         </div>
     </div>
 </div>

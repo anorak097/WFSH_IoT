@@ -12,7 +12,6 @@ void setup() {
   Serial.begin(9600);
   pinMode(2, OUTPUT);
   pinMode(3, OUTPUT);
-  pinMode(3, OUTPUT);
 }
 
 void loop() {
@@ -21,17 +20,14 @@ void loop() {
   Serial.print(distance);
   current = millis();
   if (distance > 20){
-    digitalWrite(4, HIGH);
     digitalWrite(3, LOW);
     digitalWrite(2, LOW);
   }
   else if (distance <= 20 && distance > 10){
-    digitalWrite(4, LOW);
     digitalWrite(3, HIGH);
     digitalWrite(2, LOW);
   }
   else{
-    digitalWrite(4, LOW);
     digitalWrite(3, LOW);
     if (current - previous >= 200){
       previous = current;
