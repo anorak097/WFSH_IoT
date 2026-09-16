@@ -9,5 +9,5 @@ components.d.ts
 */.claude
 */.pio
 */.vscode
-*/.singular-blockly
+*/singular_blockly
 */blockly/*
