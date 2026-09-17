@@ -311,8 +311,8 @@ color: dark
 <h2>
 # 本日作業<br>
 要求：<br>
-綠燈在20公分以上長亮<br>
-黃燈在10~20公分間長亮<br>
+綠燈在30公分以上長亮<br>
+黃燈在10~30公分間快速閃爍(delay(300);)<br>
 紅燈在10公分內快速閃爍 <span style="background:#FFE45E; color:black;">(delay(150);)</span><br>
 作業要求：<br>
 接線：繳交 <span style="background:#FFE45E; color:black;">wokwi 的 diagram.json</span> (於下載的 project.zip 中)<br>
