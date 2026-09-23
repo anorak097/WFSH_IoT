@@ -348,3 +348,79 @@ color: dark
 運作：<span style="background:#FFE45E; color:black;">現場檢查</span>運作<br><br>
 詳見 Classroom 中作業說明
 </h2>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+routeAlias: w4
+---
+
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">顯示器</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 66%; padding-right: 20px; box-sizing: border-box;">
+            <h2>顯示器是生活中常見的輸出裝置，在物聯網應用中，常用於呈現雲端資訊或感測器數據。然而，由於微控制器本身的<span style="background:#FFE45E; color:black;">記憶體與運算資源有限</span>，通常難以甚至無法渲染高解析度的複雜畫面。因此，實務上常需要藉由電腦等設備協助處理，或是盡可能簡化畫面內容並減少細節，才能將資訊順利顯示。
+            </h2>
+        </div>
+        <div style="width: 34%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj5ID9UpHr05bO8K8i0HwMQ9q_2b06Xro13lxAcO1-ysLHvItI9MOaNHBTon1J-WBVgnMyXcL0beZshv0AhVaUvF-LKcJO58txXA559dgX-lIOangwixkYJC246y4bxr-p-F4mQQNn0XJJO/s1600/display_monitor_tv.png">
+            電視就屬於顯示器的一種
+        </div>
+    </div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">1602LCD 實作</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 66%; padding-right: 20px; box-sizing: border-box;">
+            <h2>
+            使用 library: LiquidCrystal I2C<br>
+            </h2>
+        </div>
+        <div style="width: 34%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <img src="">
+        </div>
+    </div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">"Internet" of Things</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 66%; padding-right: 20px; box-sizing: border-box;">
+            <h2><span style="background:#FFE45E; color:black;">網際網路 (Internet)</span> 是現代資訊傳遞與裝置連線的核心基石。在物聯網的應用場景中，為了讓感測器、微控制器與雲端平台能夠順暢溝通，發展出了多種<span style="background:#FFE45E; color:black;">專門的通訊協定與模式</span>，如藍芽、Wi-Fi 與 MQTT。其中，Wi-Fi 是建立網路連線的關鍵技術；而 MQTT 則是依靠網路連線，作為訊息傳輸的應用協定。
+            </h2>
+        </div>
+        <div style="width: 34%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwgl0cMC82wco1Na4bUEsiIgOCi9cQUxkTt-eKnOTZqhTfi_YdfU0ECx2bUesUctfAKhau_QaV-5T62XHzfq1fR52gZki0TMdYZfxwG2RzjD276k7J-A2bFmtuDFxCwwn4bbhuth8SgMpk/s800/wifi_yes.png">
+            Wi-Fi 已是生活不可或缺的一部份
+        </div>
+    </div>
+</div>

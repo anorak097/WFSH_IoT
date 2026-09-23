@@ -8,8 +8,13 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
+<<<<<<< HEAD
       "cwd": "d:/G11516010/WFSH_IoT/w4/wokwi",
       "program": "d:/G11516010/WFSH_IoT/w4/wokwi/build/Debug/outDebug",
+=======
+      "cwd": "d:/code_git/WFSH_IoT/w2/wokwi",
+      "program": "d:/code_git/WFSH_IoT/w2/wokwi/build/Debug/outDebug",
+>>>>>>> w4
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
