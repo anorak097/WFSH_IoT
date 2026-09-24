@@ -611,3 +611,38 @@ void loop() {
 </div>
     </div>
 </div>
+
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">補充：網頁 html 碼</h1>
+
+::content::
+
+```html
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nano 33 IoT Controller</title>
+</head>
+<body>
+    <h1>Nano 33 IoT Controller</h1>
+    
+    <p>Current Seats: Seat No.</p>
+    <p>Current Message: No Msg</p>
+    
+    <form action="/submit" method="GET">
+        Seats (e.g. 10 11): <input type="text" name="seats" value="Seat No."><br><br>
+        Message: <input type="text" name="msg" value="No Msg"><br><br>
+        <input type="submit" value="Send">
+    </form>
+</body>
+</html>
+```
