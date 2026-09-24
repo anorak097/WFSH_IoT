@@ -425,3 +425,189 @@ color: dark
         </div>
     </div>
 </div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">SoftAP + 1602LCD 實作作業</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 66%; padding-right: 20px; box-sizing: border-box;">
+            <h2>
+            # 本日作業<br>
+            要求：<br>
+            1.<span style="background:#FFE45E; color:black;">修改</span>範例程式並燒錄進 Nano 33 IoT 中<br>
+            2.連線網路並進入 1602 LCD 顯示的 ip <br>
+            3.輸入座號與<span style="background:#FFE45E; color:black;">Happy Moon festival!</span><br><br>
+            繳交要求與配分：<br>
+            <span style="background:#FFE45E; color:black;">diagram.json</span> (30%)<br>
+            程式檔 (.ino檔) (30%)<br>
+            送出訊息後的手機截圖 (20%)<br>
+            LCD 執行結果 照片(20%)<br>
+            </h2>
+        </div>
+        <div style="width: 34%; display: flex; flex-direction: column; align-items: start; text-align: start; box-sizing: border-box;">
+            範例程式：<br>
+
+```cpp
+#include <SPI.h>
+#include <WiFiNINA.h>
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+char ssid[] = "兩人班級座號 e.g:201**201**";
+char pass[] = "半形英數 >= 8 位";
+int status = WL_IDLE_STATUS;
+
+WiFiServer server(80);
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+String currentLine = "";
+String seats = "Seat No.";
+String message = "No Msg";
+
+String urlDecode(String input) {
+    String decoded = "";
+    char c;
+    for (unsigned int i = 0; i < input.length(); i++) {
+        c = input.charAt(i);
+        if (c == '+') {
+            decoded += ' ';
+        } else if (c == '%' && i + 2 < input.length()) {
+            char hex1 = input.charAt(i + 1);
+            char hex2 = input.charAt(i + 2);
+            int value = 0;
+            if (hex1 >= '0' && hex1 <= '9') value += (hex1 - '0') * 16;
+            else if (hex1 >= 'A' && hex1 <= 'F') value += (hex1 - 'A' + 10) * 16;
+            else if (hex1 >= 'a' && hex1 <= 'f') value += (hex1 - 'a' + 10) * 16;
+
+            if (hex2 >= '0' && hex2 <= '9') value += (hex2 - '0');
+            else if (hex2 >= 'A' && hex2 <= 'F') value += (hex2 - 'A' + 10);
+            else if (hex2 >= 'a' && hex2 <= 'f') value += (hex2 - 'a' + 10);
+
+            decoded += (char)value;
+            i += 2;
+        } else {
+            decoded += c;
+        }
+    }
+    return decoded;
+}
+
+void updateLCD() {
+    lcd.clear();
+
+    String fullText = seats + " " + message;
+
+    String line1 = "";
+    if (fullText.length() > 0) {
+        line1 = fullText.substring(0, min((int)fullText.length(), 16));
+    }
+
+    String line2 = "";
+    if (fullText.length() > 16) {
+        line2 = fullText.substring(16, min((int)fullText.length(), 32));
+    }
+
+    lcd.setCursor(0, 0);
+    lcd.print(line1);
+
+    if (line2.length() > 0) {
+        lcd.setCursor(0, 1);
+        lcd.print(line2);
+    }
+}
+
+void setup() {
+    Wire.begin();
+    lcd.init();
+    lcd.backlight();
+    lcd.setCursor(0, 0);
+    lcd.print("Starting AP...");
+
+    if (WiFi.status() == WL_NO_MODULE) {
+        lcd.clear();
+        lcd.print("WiFi Mod Failed");
+        while (true);
+    }
+
+    status = WiFi.beginAP(ssid, pass);
+    if (status != WL_AP_LISTENING) {
+        lcd.clear();
+        lcd.print("AP Start Failed");
+        while (true);
+    }
+
+    delay(10000);
+    server.begin();
+
+    updateLCD();
+}
+
+void loop() {
+    WiFiClient client = server.available();
+
+    if (client) {
+        currentLine = "";
+        while (client.connected()) {
+            if (client.available()) {
+                char c = client.read();
+                if (c == '\n') {
+                    if (currentLine.length() == 0) {
+                        client.println("HTTP/1.1 200 OK");
+                        client.println("Content-Type: text/html");
+                        client.println("Connection: close");
+                        client.println();
+                        client.println("<!DOCTYPE HTML>");
+                        client.println("<html>");
+                        client.println("<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"></head>");
+                        client.println("<body><h1>Nano 33 IoT Controller</h1>");
+                        client.println("<p>Current Seats: " + seats + "</p>");
+                        client.println("<p>Current Message: " + message + "</p>");
+                        client.println("<form action=\"/submit\" method=\"GET\">");
+                        client.println("Seats (e.g. 10 11): <input type=\"text\" name=\"seats\" value=\"" + seats + "\"><br><br>");
+                        client.println("Message: <input type=\"text\" name=\"msg\" value=\"" + message + "\"><br><br>");
+                        client.println("<input type=\"submit\" value=\"Send\">");
+                        client.println("</form>");
+                        client.println("</body></html>");
+                        break;
+                    } else {
+                        if (currentLine.startsWith("GET /submit?")) {
+                            int seatsParam = currentLine.indexOf("seats=");
+                            int msgParam = currentLine.indexOf("&msg=");
+                            int endIdx = currentLine.indexOf(" HTTP/");
+
+                            if (seatsParam != -1 && msgParam != -1 && endIdx != -1) {
+                                String rawSeats = currentLine.substring(seatsParam + 6, msgParam);
+                                String rawMsg = currentLine.substring(msgParam + 5, endIdx);
+
+                                seats = urlDecode(rawSeats);
+                                message = urlDecode(rawMsg);
+
+                                updateLCD();
+                            }
+                        }
+                        currentLine = "";
+                    }
+                } else if (c != '\r') {
+                    currentLine += c;
+                }
+            }
+        }
+        delay(1);
+        client.stop();
+    }
+}
+```
+
+</div>
+    </div>
+</div>
