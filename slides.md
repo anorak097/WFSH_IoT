@@ -10,7 +10,6 @@ neversink_slug: '物聯網課程教材'
 ---
 
 <h1 style="font-size: 5rem; font-weight: bold;">物聯網課程</h1>
-<!-- <h1 style="font-size: 5rem; margin-top: 0px; font-weight: bold;">#? ???</h1> -->
 
 
 ---
@@ -647,3 +646,57 @@ color: dark
 </body>
 </html>
 ```
+
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+routeAlias: w5
+---
+
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">MQTT</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 50%; padding-right: 20px; box-sizing: border-box;">
+            <h2>相較於 <span style="background:#FFE45E; color:black;">AP (Access Point)</span> 模式，<span style="background:#FFE45E; color:black;">STA (Station)</span> 模式更常用於物聯網裝置，主因是它能讓裝置連線至區域網路與網際網路，進而實現雲端資料同步與遠端遙控。<br>而在 STA 模式下，MQTT 是最常使用的通訊協定，其<span style="background:#FFE45E; color:black;">極輕量化的訊息標頭</span>特別適合頻寬有限或網路環境較差的物聯網場景。
+            </h2>
+        </div>
+        <div style="width: 50%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMkWTgmV9BYroLHK2MVxrXr8Usa5P_qDomSj9mGDrh3HbPaxg13mAVbbNTGhk41KyAE7p4L4k-LZtH-ltPXQVt9tiKwzX0OH6c2lnLGuS1cQ3P2rgEuU4AVhlYLz6s68L-H6CxqOuzlg8/s800/internet_mono_things.png">
+            物聯「網」
+        </div>
+    </div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">MQTT 原理</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 60%; padding-right: 20px; box-sizing: border-box;">
+            <h2>MQTT 結構較為特殊，以 Broker (代理伺服器) 為核心，<span style="background:#FFE45E; color:black;">透過「發布/訂閱」機制進行訊息調度</span>。使用者可對特定的 Topic (主題) 進行 Publish (發布) 或 Subscribe (訂閱)。
+            由於 Topic 支援多層級結構，物聯網架構常藉此將不同區域、感測器種類與應用情境進行清晰劃分與管理。
+            </h2>
+            <p v-click="1"><a src="https://jetsion.com/dashboard.html">捷上科技儀表板</a></p>
+        </div>
+        <div style="width: 40%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFEkDApOkwJSKRr0WAp-B9ieG43cMuZQCB-6yQqX7GArn1WRbl1_kUw5O-CZRpGUM9TCguNSiSKDh-mJuzmkfN8BQKMFzUZsFK6biKA7sOZFzLBkmWoOOoIo0slDxChZF0Q7twBJPfjSbL/s800/computer_cloud_system.png">
+            Broker 是 MQTT 的核心
+        </div>
+    </div>
+</div>

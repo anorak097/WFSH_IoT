@@ -1,0 +1,237 @@
+{
+  "workspace": {
+    "blocks": {
+      "languageVersion": 0,
+      "blocks": [
+        {
+          "type": "arduino_setup_loop",
+          "id": "K}`9lm2mLS$@|/E*L#ok",
+          "x": 166,
+          "y": 52,
+          "deletable": false,
+          "inputs": {
+            "SETUP": {
+              "block": {
+                "type": "esp32_wifi_connect",
+                "id": "H^ls-,f5-`-UV3[ps!7G",
+                "fields": {
+                  "SSID": "UTCS_G505",
+                  "PASSWORD": "UTCSalgoG505!"
+                },
+                "next": {
+                  "block": {
+                    "type": "esp32_mqtt_setup",
+                    "id": "0DP7c$A.#RWQb6+1zv:*",
+                    "fields": {
+                      "SERVER": "mqttgo.io",
+                      "PORT": 1883,
+                      "CLIENT_ID": "esp32client"
+                    },
+                    "next": {
+                      "block": {
+                        "type": "esp32_mqtt_connect",
+                        "id": "(lqOOcstglF:p6_UKM4Y",
+                        "fields": {
+                          "USERNAME": "",
+                          "PASSWORD": ""
+                        },
+                        "next": {
+                          "block": {
+                            "type": "ultrasonic_sensor",
+                            "id": "/9D+w512?/P)4+GwgQv;",
+                            "fields": {
+                              "TRIG_PIN": "32",
+                              "ECHO_PIN": "33",
+                              "USE_INTERRUPT": false
+                            },
+                            "next": {
+                              "block": {
+                                "type": "esp32_mqtt_subscribe",
+                                "id": "XtQ:~1(P.^Xolx+xZ[p:",
+                                "inputs": {
+                                  "TOPIC": {
+                                    "shadow": {
+                                      "type": "text",
+                                      "id": "N3q72:B3Is?IdZydY{3U",
+                                      "fields": {
+                                        "TEXT": "WFSH/IoT/test"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "LOOP": {
+              "block": {
+                "type": "esp32_mqtt_publish",
+                "id": "96)}tVHiKPxqdhJZfjaT",
+                "inputs": {
+                  "TOPIC": {
+                    "shadow": {
+                      "type": "text",
+                      "id": "RU1QvTwfIE=:!OjnK2^5",
+                      "fields": {
+                        "TEXT": "WFSH/IoT/test"
+                      }
+                    }
+                  },
+                  "MESSAGE": {
+                    "shadow": {
+                      "type": "text",
+                      "id": "}9UN[DGqoCs!G2A1(bbA",
+                      "fields": {
+                        "TEXT": "Hello"
+                      }
+                    },
+                    "block": {
+                      "type": "text_join",
+                      "id": "i#%r7@kj:+bI$;@YXbht",
+                      "extraState": {
+                        "itemCount": 1
+                      },
+                      "inputs": {
+                        "ADD0": {
+                          "block": {
+                            "type": "ultrasonic_read",
+                            "id": "QG?}RUIP!@IHM`C-!1pV"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "next": {
+                  "block": {
+                    "type": "text_print",
+                    "id": "$hpu8YxhY6CWhNeeg|m|",
+                    "fields": {
+                      "NEW_LINE": true
+                    },
+                    "inputs": {
+                      "TEXT": {
+                        "shadow": {
+                          "type": "text",
+                          "id": "-(N0ZgP`5nK{8Jma`E:k",
+                          "fields": {
+                            "TEXT": "abc"
+                          }
+                        },
+                        "block": {
+                          "type": "ultrasonic_read",
+                          "id": "vv8u!b}#deHH7MIRS.iv"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "text_print",
+          "id": "I?i3PYjepCsrD07/|HwB",
+          "x": 692,
+          "y": 332,
+          "fields": {
+            "NEW_LINE": true
+          },
+          "inputs": {
+            "TEXT": {
+              "shadow": {
+                "type": "text",
+                "id": "A[^L~Vj:E]GrZ@L8^qUe",
+                "fields": {
+                  "TEXT": "abc"
+                }
+              },
+              "block": {
+                "type": "text_join",
+                "id": "th_!{T]J:[~E~~8{tZEY",
+                "extraState": {
+                  "itemCount": 2
+                },
+                "inputs": {
+                  "ADD0": {
+                    "block": {
+                      "type": "text",
+                      "id": "W?eF~,?8|9EDdp!Pd7J6",
+                      "fields": {
+                        "TEXT": "MQTT 連線狀態"
+                      }
+                    }
+                  },
+                  "ADD1": {
+                    "block": {
+                      "type": "esp32_mqtt_status",
+                      "id": "k``tPJs,jOHMF:Ew5U*#"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "next": {
+            "block": {
+              "type": "text_print",
+              "id": "P7ICc!Od4r8kK97grC;w",
+              "fields": {
+                "NEW_LINE": true
+              },
+              "inputs": {
+                "TEXT": {
+                  "shadow": {
+                    "type": "text",
+                    "id": "A[^L~Vj:E]GrZ@L8^qUe",
+                    "fields": {
+                      "TEXT": "abc"
+                    }
+                  },
+                  "block": {
+                    "type": "text_join",
+                    "id": "Q;Bye1a|}U1kh7=l~%x,",
+                    "extraState": {
+                      "itemCount": 2
+                    },
+                    "inputs": {
+                      "ADD0": {
+                        "block": {
+                          "type": "text",
+                          "id": "{8Rm?tMWy|bWG(g5B)wL",
+                          "fields": {
+                            "TEXT": "WiFi 連線狀態"
+                          }
+                        }
+                      },
+                      "ADD1": {
+                        "block": {
+                          "type": "esp32_wifi_status",
+                          "id": "sAKv#W5MGvtVXH!x`}c}"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "variables": [
+      {
+        "name": "i",
+        "id": "WC.gsYK,[c*]+~)bUF@:"
+      }
+    ]
+  },
+  "board": "esp32"
+}
