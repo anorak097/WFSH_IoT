@@ -692,7 +692,7 @@ color: dark
             <h2>MQTT 結構較為特殊，以 Broker (代理伺服器) 為核心，<span style="background:#FFE45E; color:black;">透過「發布/訂閱」機制進行訊息調度</span>。使用者可對特定的 Topic (主題) 進行 Publish (發布) 或 Subscribe (訂閱)。
             由於 Topic 支援多層級結構，物聯網架構常藉此將不同區域、感測器種類與應用情境進行清晰劃分與管理。
             </h2>
-            <p v-click="1"><link src="https://jetsion.com/dashboard.html">捷上科技儀表板</link></p>
+            <p v-click="1"><a href="https://jetsion.com/dashboard.html">捷上科技儀表板</a></p>
         </div>
         <div style="width: 40%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFEkDApOkwJSKRr0WAp-B9ieG43cMuZQCB-6yQqX7GArn1WRbl1_kUw5O-CZRpGUM9TCguNSiSKDh-mJuzmkfN8BQKMFzUZsFK6biKA7sOZFzLBkmWoOOoIo0slDxChZF0Q7twBJPfjSbL/s800/computer_cloud_system.png">
