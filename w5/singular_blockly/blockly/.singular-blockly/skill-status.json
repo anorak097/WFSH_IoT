@@ -2,8 +2,10 @@
   "schemaVersion": 1,
   "status": "ready",
   "skillVersion": "2.0.0",
-  "backupPaths": [],
+  "backupPaths": [
+    "blockly/.singular-blockly/skill-backups/20261001T081803943Z"
+  ],
   "issues": [],
   "manifestPath": ".agents/skills/singular-blockly/managed-manifest.json",
-  "lastAttemptAt": "2026-09-30T08:00:39.111Z"
+  "lastAttemptAt": "2026-10-01T08:18:04.362Z"
 }
