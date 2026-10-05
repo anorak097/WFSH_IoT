@@ -24,6 +24,7 @@ routeAlias: Outline
 <h1><Link to="w3">第三周教材</Link></h1>
 <h1><Link to="w4">第四周教材</Link></h1>
 <h1><Link to="w5">第五周教材</Link></h1>
+<h1><Link to="w6">第六周教材</Link></h1>
 
 ---
 transition: slide-left
@@ -697,6 +698,51 @@ color: dark
         <div style="width: 40%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFEkDApOkwJSKRr0WAp-B9ieG43cMuZQCB-6yQqX7GArn1WRbl1_kUw5O-CZRpGUM9TCguNSiSKDh-mJuzmkfN8BQKMFzUZsFK6biKA7sOZFzLBkmWoOOoIo0slDxChZF0Q7twBJPfjSbL/s800/computer_cloud_system.png">
             Broker 是 MQTT 的核心
+        </div>
+    </div>
+</div>
+
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+routeAlias: w6
+---
+
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">MQTT 結構解釋</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 60%; padding-right: 20px; box-sizing: border-box;">
+        </div>
+        <div style="width: 40%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+        </div>
+    </div>
+</div>
+
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">MQTT 實作 (ESP32 × MQTTGO.io)</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 60%; padding-right: 20px; box-sizing: border-box;">
+        </div>
+        <div style="width: 40%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
         </div>
     </div>
 </div>
