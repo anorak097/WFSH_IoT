@@ -16,7 +16,7 @@
                 "id": "H^ls-,f5-`-UV3[ps!7G",
                 "fields": {
                   "SSID": "",
-                  "PASSWORD": "UTCSalgoG505!"
+                  "PASSWORD": ""
                 },
                 "next": {
                   "block": {
@@ -25,7 +25,7 @@
                     "fields": {
                       "SERVER": "mqttgo.io",
                       "PORT": 1883,
-                      "CLIENT_ID": "WFSH20102u;612ufu.4"
+                      "CLIENT_ID": "asdfghjklqwertyuxcvbnm"
                     },
                     "next": {
                       "block": {

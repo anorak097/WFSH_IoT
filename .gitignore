@@ -10,3 +10,5 @@ components.d.ts
 */.pio
 */.vscode
 */blockly/*
+*/hw/
+*/demo_video/

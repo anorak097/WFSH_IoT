@@ -761,7 +761,7 @@ color: dark
 </h2>
         </div>
         <div style="width: 40%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
-            <img style="width: 100%; height: auto;" src="https://cdn.7tv.app/emote/01F6W9KDJ00007WR3JGSXZVR14/4x.webp">
+            <img style="width: 100%; height: auto;" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgaG-Dft9EvaMucq8nwD6HGoUEuOTpcdx0DLcP4wgCzW7tgc0LIAcZd9tucsTIscTFrVUpK9JULHzEeR_DtNyDdAoTAFlKg1qq0elh7ymZX2IJaSEaGp0YArAhJwuqnAz4cuxXOU2_oi5VA/s800/computer_search_kensaku.png">
         </div>
     </div>
 </div>
@@ -794,7 +794,7 @@ color: dark
             </h2>
         </div>
         <div style="width: 40%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
-            <img style="width: 100%; height: auto;" src="https://cdn.7tv.app/emote/01F6W9KDJ00007WR3JGSXZVR14/4x.webp">
+            <img style="width: 100%; height: auto;" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJWP8a9vbGKmeUKbagxvtnL6XsYxKaKeQ01Vm8uiQPdkAdpUQtSGaICZO9MY5P-uzPFhJ_i6txSb8aSjOlxNEgMTJEi8bh0QkHNv8L-96G4uERtiwIEDn7F9dj8Vie7_vCLxqOIH6Qtt0B/s800/job_programmer.png">
         </div>
     </div>
 </div>
@@ -868,9 +868,8 @@ color: dark
 
 <div style="margin-bottom: 10px;">
     <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
-        <div style="width: 60%; padding-right: 20px; box-sizing: border-box;">
-        </div>
-        <div style="width: 40%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+        <div style="width: 100%; padding-right: 20px; box-sizing: border-box;">
+            <h2><h1>作業要求：</h1><br>正確接線，使用上課教的 Blockly 程式做到以下事項：<br>1. 連線 Wifi (限2.4G)<br>2. 使用 MQTT 通訊協定連線至 mqttgo.io，client-ID 為 WFSH_201** (**為座號)<br>3. MQTT 之帳號與密碼不需要<br>4. 每隔一秒，發送訊息至 WFSH/IoT/201**/Ultrasonic_dis 中<br>5. 於 https://mqttgo.io/ 中訂閱自己發布的訊息並顯示在儀表板中，儀表板類型為折線圖，名稱為距離，數值區間為 0~400，單位為cm<br><br><h1>繳交要求與配分詳見 Classroom</h1></h2>
         </div>
     </div>
 </div>
