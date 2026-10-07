@@ -712,16 +712,144 @@ routeAlias: w6
 
 ::title::
 
-<h1 style="font-size: 2.5rem; font-weight: bold;">MQTT 結構解釋</h1>
+<h1 style="font-size: 2.5rem; font-weight: bold;">Side Project 解說 (Ⅰ)</h1>
 
 ::content::
 
 <div style="margin-bottom: 10px;">
     <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
         <div style="width: 60%; padding-right: 20px; box-sizing: border-box;">
+            <h2>Side Project (個人專案) 發想</h2>
+            <h2 v-click="1">1. 觀察生活、找出問題、拆解問題</h2>
+            <h2 v-click="2">e.g. 當我想要在桌上有個 <span style="background:#FFE45E; color:black;">TODO list 或是 dashboard (儀錶板)</span>，同時也想要有個能夠當我不在座位時，來到我座位的人<span style="background:#FFE45E; color:black;">能知道我可能在哪</span>
+            </h2>
+            <h2 v-click="3">標起來的都需要一個螢幕 (顯示器)<br><span  v-click="4">也需要知道我人在不在座位</span><br><span style="background:#FFE45E; color:black;" v-click="5">But HOW?</span></h2>
         </div>
         <div style="width: 40%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <img style="width: 100%; height: auto;" src="https://cdn.7tv.app/emote/01F6W9KDJ00007WR3JGSXZVR14/4x.webp">
         </div>
+    </div>
+</div>
+
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">Side Project 解說 (Ⅱ)</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 60%; padding-right: 20px; box-sizing: border-box;">
+            <h2>Side Project (個人專案) 發想</h2>
+            <h2>2. 尋找解方</h2>
+<h2 v-click="1">
+
+- 顯示 TODO list / Dashboard 和人的大致位置 — 使用顯示器顯示
+  - 大致位置可以分成行事曆安排與臨時活動
+- 人在/不在怎樣判斷? 
+
+<span v-click="2">(WIFI, Bluetooth, CoAP, LoRa, RFID...)</span>
+
+
+</h2>
+        </div>
+        <div style="width: 40%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <img style="width: 100%; height: auto;" src="https://cdn.7tv.app/emote/01F6W9KDJ00007WR3JGSXZVR14/4x.webp">
+        </div>
+    </div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">Side Project 解說 (Ⅳ)</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 60%; padding-right: 20px; box-sizing: border-box;">
+            <h2>Side Project (個人專案) 發想</h2>
+            <h2>3. 處理問題</h2>
+            <h2 v-click="1">找到適合的[裝置](https://docs.waveshare.net/ESP32-S3-Touch-LCD-7B/)</h2>
+            <h2 v-click="2">使用藍芽作為人在 / 不在判斷依據
+            </h2>
+            <h2 style="background:#FFE45E; color:black;" v-click="3">手機的藍芽會一直開著，而且能根據 RSSI 作為判斷距離的依據
+            </h2>
+            <h2 v-click="4">使用 MQTT 傳送行事曆資訊與手動更新資訊
+            </h2>
+            <h2 v-click="5">使用程式解決位置判斷、UI 控制、資料抓取與發佈 MQTT 訊息等
+            </h2>
+        </div>
+        <div style="width: 40%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <img style="width: 100%; height: auto;" src="https://cdn.7tv.app/emote/01F6W9KDJ00007WR3JGSXZVR14/4x.webp">
+        </div>
+    </div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">Side Project 解說 (Ⅲ)</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+<div style="width: 100%; padding-right: 20px; box-sizing: border-box; max-height: 400px; overflow-y: auto;">
+
+```mermaid
+flowchart TD
+    Start([開始: update_ui_status]) --> CheckBLE{ BLE 裝置近場偵測<br/>millis - lastTargetFoundTime &lt; 30s ? }
+    CheckBLE -->|是: 人在| SetPresent[isPresent = true]
+    CheckBLE -->|否: 人不在| SetAbsent[isPresent = false]
+    
+    SetPresent --> CheckUploadRecent
+    SetAbsent --> CheckUploadRecent
+    
+    CheckUploadRecent{ 是否有 P1 留言且收受時間 &lt; 5分鐘 ? }
+    CheckUploadRecent -->|是| ModeP1[模式: P1 upload 留言<br/>內容: mqttUploadMsg<br/>顏色: 黃色 #FACC15<br/>型態: 單行跑馬燈]
+    CheckUploadRecent -->|否| CheckCal{ 日曆是否有事件<br/>calendarStatus != '人不在' ? }
+    
+    CheckCal -->|是| ModeP2[模式: P2 日曆排程<br/>內容: calendarStatus<br/>顏色: 天藍色 #38BDF8<br/>型態: 單行跑馬燈]
+    CheckCal -->|否| CheckPresence{ isPresent 為真 人在 ? }
+    
+    CheckPresence -->|是| ModeP3[模式: P3 人在儀表板<br/>顯示: Dashboard 視覺化容器<br/>內容: 7天 Coding 圖表 + 今日進度環]
+    CheckPresence -->|否| CheckUploadExpired{ 是否有 P4 舊留言<br/>過期但尚未自動清除 ? }
+    
+    CheckUploadExpired -->|是| ModeP4[模式: P4 upload 過期舊留言<br/>內容: mqttUploadMsg<br/>顏色: 紅色 #F87171<br/>型態: 單行跑馬燈]
+    CheckUploadExpired -->|否| ModeP5[模式: P5 人不在預設<br/>內容: calendarStatus 人不在<br/>顏色: 灰藍色 #94A3B8<br/>型態: 單行跑馬燈]
+    
+    ModeP1 --> SwitchUI[切換及繪製 UI 畫面]
+    ModeP2 --> SwitchUI
+    ModeP3 --> SwitchUI
+    ModeP4 --> SwitchUI
+    ModeP5 --> SwitchUI
+    
+    SwitchUI --> End([結束本次 UI 檢查])
+```
+
+</div>
+        <!-- <div style="width: 40%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <img style="width: 100%; height: auto;" src="https://cdn.7tv.app/emote/01F6W9KDJ00007WR3JGSXZVR14/4x.webp">
+        </div> -->
     </div>
 </div>
 
