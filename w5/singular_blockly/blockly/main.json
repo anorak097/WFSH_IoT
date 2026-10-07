@@ -16,21 +16,21 @@
                 "id": "H^ls-,f5-`-UV3[ps!7G",
                 "fields": {
                   "SSID": "",
-                  "PASSWORD": ""
+                  "PASSWORD": "UTCSalgoG505!"
                 },
                 "next": {
                   "block": {
                     "type": "esp32_mqtt_setup",
-                    "id": "0DP7c$A.#RWQb6+1zv:*",
+                    "id": "%@FAkWhO2hLENe^c1R?k",
                     "fields": {
                       "SERVER": "mqttgo.io",
                       "PORT": 1883,
-                      "CLIENT_ID": ""
+                      "CLIENT_ID": "WFSH20102u;612ufu.4"
                     },
                     "next": {
                       "block": {
                         "type": "esp32_mqtt_connect",
-                        "id": "Nu^^y!Q$oVQ^|$d^;OLf",
+                        "id": "l04es3C*%?TQPFN5X`iW",
                         "fields": {
                           "USERNAME": "",
                           "PASSWORD": ""
@@ -54,49 +54,105 @@
             },
             "LOOP": {
               "block": {
-                "type": "esp32_mqtt_publish",
-                "id": "96)}tVHiKPxqdhJZfjaT",
+                "type": "controls_if",
+                "id": "Tlf@ILTdljW#_7jyGM|o",
+                "extraState": {
+                  "hasElse": true
+                },
                 "inputs": {
-                  "TOPIC": {
-                    "shadow": {
-                      "type": "text",
-                      "id": "RU1QvTwfIE=:!OjnK2^5",
-                      "fields": {
-                        "TEXT": "WFSH/IoT/test"
-                      }
+                  "IF0": {
+                    "block": {
+                      "type": "esp32_mqtt_status",
+                      "id": "5Eh2JS%F?4yg2/Vp+zAF"
                     }
                   },
-                  "MESSAGE": {
-                    "shadow": {
-                      "type": "text",
-                      "id": "}9UN[DGqoCs!G2A1(bbA",
-                      "fields": {
-                        "TEXT": "Hello"
-                      }
-                    },
+                  "DO0": {
                     "block": {
-                      "type": "text_join",
-                      "id": "i#%r7@kj:+bI$;@YXbht",
-                      "extraState": {
-                        "itemCount": 1
-                      },
+                      "type": "esp32_mqtt_publish",
+                      "id": "96)}tVHiKPxqdhJZfjaT",
                       "inputs": {
-                        "ADD0": {
+                        "TOPIC": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "RU1QvTwfIE=:!OjnK2^5",
+                            "fields": {
+                              "TEXT": "WFSH/IoT/test"
+                            }
+                          }
+                        },
+                        "MESSAGE": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "}9UN[DGqoCs!G2A1(bbA",
+                            "fields": {
+                              "TEXT": "Hello"
+                            }
+                          },
                           "block": {
-                            "type": "ultrasonic_read",
-                            "id": "QG?}RUIP!@IHM`C-!1pV"
+                            "type": "text_join",
+                            "id": "i#%r7@kj:+bI$;@YXbht",
+                            "extraState": {
+                              "itemCount": 1
+                            },
+                            "inputs": {
+                              "ADD0": {
+                                "block": {
+                                  "type": "ultrasonic_read",
+                                  "id": "QG?}RUIP!@IHM`C-!1pV"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "arduino_delay",
+                          "id": "2EKE.^DkY!ey?4__zOTA",
+                          "fields": {
+                            "TIME": 1000
                           }
                         }
                       }
                     }
-                  }
-                },
-                "next": {
-                  "block": {
-                    "type": "arduino_delay",
-                    "id": "2EKE.^DkY!ey?4__zOTA",
-                    "fields": {
-                      "TIME": 1000
+                  },
+                  "ELSE": {
+                    "block": {
+                      "type": "text_print",
+                      "id": ":cin!{*O|eC`]KmL_W[U",
+                      "fields": {
+                        "NEW_LINE": true
+                      },
+                      "inputs": {
+                        "TEXT": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "I|5.vw:bj1jvS}RQuD3$",
+                            "fields": {
+                              "TEXT": "嘗試重連"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "esp32_mqtt_connect",
+                          "id": "Q~G6diL^8!tfMx!IXEd{",
+                          "fields": {
+                            "USERNAME": "",
+                            "PASSWORD": ""
+                          },
+                          "next": {
+                            "block": {
+                              "type": "arduino_delay",
+                              "id": "eq$1_/zY(SycTZ.TS/||",
+                              "fields": {
+                                "TIME": 1000
+                              }
+                            }
+                          }
+                        }
+                      }
                     }
                   }
                 }

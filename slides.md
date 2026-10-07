@@ -807,7 +807,7 @@ color: dark
 
 ::title::
 
-<h1 style="font-size: 2.5rem; font-weight: bold;">Side Project 解說 (Ⅲ)</h1>
+<h1 style="font-size: 2.5rem; font-weight: bold;">Side Project 判斷邏輯解說</h1>
 
 ::content::
 

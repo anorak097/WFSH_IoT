@@ -7,7 +7,7 @@ WiFiClient _wifiClient;
 PubSubClient mqttClient(_wifiClient);
 String lastMqttTopic = "";
 String lastMqttMessage = "";
-const char* _mqttClientId = "";
+const char* _mqttClientId = "WFSH20102u;612ufu.4";
 
 // 超音波感測器變數
 const int ultrasonic_trigPin = 32;  // 超音波 Trig 腳位
@@ -44,11 +44,13 @@ float ultrasonicMeasureDistance() {
 }
 
 void setup() {
+  Serial.begin(9600);
   pinMode(32, OUTPUT); // 自動設定腳位模式
   pinMode(33, INPUT); // 自動設定腳位模式
   // WiFi 連線到
   WiFi.mode(WIFI_STA);
-  WiFi.begin("", "");
+  WiFi.setAutoReconnect(true);
+  WiFi.begin("", "UTCSalgoG505!");
   unsigned long _wifiStartTime = millis();
   while (WiFi.status() != WL_CONNECTED && millis() - _wifiStartTime < 10000) {
   delay(500);
@@ -61,7 +63,15 @@ void setup() {
 }
 
 void loop() {
+  if (mqttClient.connected()) {
   // MQTT 發布訊息
   mqttClient.publish(String("WFSH/IoT/test").c_str(), String(String(ultrasonicMeasureDistance())).c_str());
   delay(1000);
+  }
+  else {
+  Serial.println("嘗試重連");
+  // MQTT 連線
+  mqttClient.connect(_mqttClientId);
+  delay(1000);
+  }
 }
