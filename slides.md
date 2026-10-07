@@ -854,7 +854,7 @@ flowchart TD
 </div>
 
 
-<!-- ---
+---
 transition: slide-left
 layout: top-title
 color: dark
@@ -872,4 +872,4 @@ color: dark
             <h2><h1>作業要求：</h1><br>正確接線，使用上課教的 Blockly 程式做到以下事項：<br>1. 連線 Wifi (限2.4G)<br>2. 使用 MQTT 通訊協定連線至 mqttgo.io，client-ID 為 WFSH_201** (**為座號)<br>3. MQTT 之帳號與密碼不需要<br>4. 每隔一秒，發送訊息至 WFSH/IoT/201**/Ultrasonic_dis 中<br>5. 於 https://mqttgo.io/ 中訂閱自己發布的訊息並顯示在儀表板中，儀表板類型為折線圖，名稱為距離，數值區間為 0~400，單位為cm<br><br><h1>繳交要求與配分詳見 Classroom</h1></h2>
         </div>
     </div>
-</div> -->
+</div>
