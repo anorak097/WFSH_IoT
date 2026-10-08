@@ -3,9 +3,9 @@
   "status": "ready",
   "skillVersion": "2.0.0",
   "backupPaths": [
-    "blockly/.singular-blockly/skill-backups/20261007T134455974Z"
+    "blockly/.singular-blockly/skill-backups/20261008T055524469Z"
   ],
   "issues": [],
   "manifestPath": ".agents/skills/singular-blockly/managed-manifest.json",
-  "lastAttemptAt": "2026-10-07T13:45:13.665Z"
+  "lastAttemptAt": "2026-10-08T05:55:24.906Z"
 }

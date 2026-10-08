@@ -1,0 +1,173 @@
+{
+  "workspace": {
+    "blocks": {
+      "languageVersion": 0,
+      "blocks": [
+        {
+          "type": "arduino_setup_loop",
+          "id": "K}`9lm2mLS$@|/E*L#ok",
+          "x": 166,
+          "y": 52,
+          "deletable": false,
+          "inputs": {
+            "SETUP": {
+              "block": {
+                "type": "esp32_wifi_connect",
+                "id": "H^ls-,f5-`-UV3[ps!7G",
+                "fields": {
+                  "SSID": "",
+                  "PASSWORD": ""
+                },
+                "next": {
+                  "block": {
+                    "type": "esp32_mqtt_setup",
+                    "id": "%@FAkWhO2hLENe^c1R?k",
+                    "fields": {
+                      "SERVER": "mqttgo.io",
+                      "PORT": 1883,
+                      "CLIENT_ID": "asdfghjklqwertyuxcvbnm"
+                    },
+                    "next": {
+                      "block": {
+                        "type": "esp32_mqtt_connect",
+                        "id": "l04es3C*%?TQPFN5X`iW",
+                        "fields": {
+                          "USERNAME": "",
+                          "PASSWORD": ""
+                        },
+                        "next": {
+                          "block": {
+                            "type": "ultrasonic_sensor",
+                            "id": "/9D+w512?/P)4+GwgQv;",
+                            "fields": {
+                              "TRIG_PIN": "32",
+                              "ECHO_PIN": "33",
+                              "USE_INTERRUPT": false
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "LOOP": {
+              "block": {
+                "type": "controls_if",
+                "id": "Tlf@ILTdljW#_7jyGM|o",
+                "extraState": {
+                  "hasElse": true
+                },
+                "inputs": {
+                  "IF0": {
+                    "block": {
+                      "type": "esp32_mqtt_status",
+                      "id": "5Eh2JS%F?4yg2/Vp+zAF"
+                    }
+                  },
+                  "DO0": {
+                    "block": {
+                      "type": "esp32_mqtt_publish",
+                      "id": "96)}tVHiKPxqdhJZfjaT",
+                      "inputs": {
+                        "TOPIC": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "RU1QvTwfIE=:!OjnK2^5",
+                            "fields": {
+                              "TEXT": "WFSH/IoT/test"
+                            }
+                          }
+                        },
+                        "MESSAGE": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "}9UN[DGqoCs!G2A1(bbA",
+                            "fields": {
+                              "TEXT": "Hello"
+                            }
+                          },
+                          "block": {
+                            "type": "text_join",
+                            "id": "i#%r7@kj:+bI$;@YXbht",
+                            "extraState": {
+                              "itemCount": 1
+                            },
+                            "inputs": {
+                              "ADD0": {
+                                "block": {
+                                  "type": "ultrasonic_read",
+                                  "id": "QG?}RUIP!@IHM`C-!1pV"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "arduino_delay",
+                          "id": "2EKE.^DkY!ey?4__zOTA",
+                          "fields": {
+                            "TIME": 1000
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "ELSE": {
+                    "block": {
+                      "type": "text_print",
+                      "id": ":cin!{*O|eC`]KmL_W[U",
+                      "fields": {
+                        "NEW_LINE": true
+                      },
+                      "inputs": {
+                        "TEXT": {
+                          "shadow": {
+                            "type": "text",
+                            "id": "I|5.vw:bj1jvS}RQuD3$",
+                            "fields": {
+                              "TEXT": "嘗試重連"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "esp32_mqtt_connect",
+                          "id": "Q~G6diL^8!tfMx!IXEd{",
+                          "fields": {
+                            "USERNAME": "",
+                            "PASSWORD": ""
+                          },
+                          "next": {
+                            "block": {
+                              "type": "arduino_delay",
+                              "id": "eq$1_/zY(SycTZ.TS/||",
+                              "fields": {
+                                "TIME": 1000
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "variables": [
+      {
+        "name": "i",
+        "id": "WC.gsYK,[c*]+~)bUF@:"
+      }
+    ]
+  },
+  "board": "esp32"
+}
