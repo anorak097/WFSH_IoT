@@ -15,8 +15,8 @@
                 "type": "esp32_wifi_connect",
                 "id": "H^ls-,f5-`-UV3[ps!7G",
                 "fields": {
-                  "SSID": "",
-                  "PASSWORD": ""
+                  "SSID": "Anorak",
+                  "PASSWORD": "vIi1h4CHl"
                 },
                 "next": {
                   "block": {
