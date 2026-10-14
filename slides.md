@@ -899,4 +899,4 @@ routeAlias: w7
             <h2><h1>作業要求：</h1><br>正確接線，使用上課教的程式做到以下事項：<br>1. 連線 Wifi (限2.4G)<br>2. 使用 MQTT 通訊協定連線至 mqttgo.io，client-ID 為 WFSH_201** (**為座號)<br>3. 訂閱頻道 WFSH/IoT/201**/Subscribe <br>4. 正確將收到的訊息展示在 1602LCD 上<br>5. 拍照紀錄後在收到訊息後的一分鐘內至 WFSH/IoT/201**/Publish 發布(推播)收到的訊息<br><br><h1>繳交要求與配分詳見 Classroom</h1></h2>
         </div>
     </div>
-</div
+</div>
