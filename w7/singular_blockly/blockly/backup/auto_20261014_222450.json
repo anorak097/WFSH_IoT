@@ -1,0 +1,276 @@
+{
+  "workspace": {
+    "blocks": {
+      "languageVersion": 0,
+      "blocks": [
+        {
+          "type": "arduino_setup_loop",
+          "id": "QM`yS5dcOp.V=o.Dj%(b",
+          "x": 115,
+          "y": 36,
+          "deletable": false,
+          "inputs": {
+            "SETUP": {
+              "block": {
+                "type": "esp32_wifi_connect",
+                "id": "oJT[e+Of;ifiIXsZap(~",
+                "fields": {
+                  "SSID": "Anorak",
+                  "PASSWORD": "vIi1h4CHl"
+                },
+                "next": {
+                  "block": {
+                    "type": "text_print",
+                    "id": "s+/mOzzyZ7(vM+SG6NWG",
+                    "fields": {
+                      "NEW_LINE": true
+                    },
+                    "inputs": {
+                      "TEXT": {
+                        "shadow": {
+                          "type": "text",
+                          "id": "1T.[ARb;9zu@{@E`hzsw",
+                          "fields": {
+                            "TEXT": "abc"
+                          }
+                        },
+                        "block": {
+                          "type": "text_join",
+                          "id": "rAw#5t?}*hQUfPGdR[uv",
+                          "extraState": {
+                            "itemCount": 2
+                          },
+                          "inputs": {
+                            "ADD0": {
+                              "block": {
+                                "type": "text",
+                                "id": "t@me)-;+V[m]!IU3Cphb",
+                                "fields": {
+                                  "TEXT": "WIFI: "
+                                }
+                              }
+                            },
+                            "ADD1": {
+                              "block": {
+                                "type": "esp32_wifi_status",
+                                "id": "JhJw*qjovkm#3GUPS.*}"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "esp32_mqtt_setup",
+                        "id": "YGVeOZr0wIm~RMD.CAo|",
+                        "fields": {
+                          "SERVER": "mqttgo.io",
+                          "PORT": 1883,
+                          "CLIENT_ID": "esp32client"
+                        },
+                        "next": {
+                          "block": {
+                            "type": "esp32_mqtt_connect",
+                            "id": "9hN2Cc({^=|H=U(Y5-x0",
+                            "fields": {
+                              "USERNAME": "",
+                              "PASSWORD": ""
+                            },
+                            "next": {
+                              "block": {
+                                "type": "text_print",
+                                "id": "L~wWGg#wcqgd%kd[mkOh",
+                                "fields": {
+                                  "NEW_LINE": true
+                                },
+                                "inputs": {
+                                  "TEXT": {
+                                    "shadow": {
+                                      "type": "text",
+                                      "id": "1T.[ARb;9zu@{@E`hzsw",
+                                      "fields": {
+                                        "TEXT": "abc"
+                                      }
+                                    },
+                                    "block": {
+                                      "type": "text_join",
+                                      "id": "uy.Evn@pCkV^/.hw]-=q",
+                                      "extraState": {
+                                        "itemCount": 2
+                                      },
+                                      "inputs": {
+                                        "ADD0": {
+                                          "block": {
+                                            "type": "text",
+                                            "id": "=:HfA1l6GH_~mA=9dG]q",
+                                            "fields": {
+                                              "TEXT": "MQTT: "
+                                            }
+                                          }
+                                        },
+                                        "ADD1": {
+                                          "block": {
+                                            "type": "esp32_mqtt_status",
+                                            "id": "5RC+8=iZl%H77^y0Q,2p"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "next": {
+                                  "block": {
+                                    "type": "esp32_mqtt_subscribe",
+                                    "id": "_zP^{36@F)^4n[o=DA#6",
+                                    "inputs": {
+                                      "TOPIC": {
+                                        "shadow": {
+                                          "type": "text",
+                                          "id": "/9L,(F|c64r39ga=r7z]",
+                                          "fields": {
+                                            "TEXT": "WFSH/IoT/test/tmp"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "LOOP": {
+              "block": {
+                "type": "esp32_mqtt_loop",
+                "id": "0oZVL?o+onm]Y2#k4`*A",
+                "next": {
+                  "block": {
+                    "type": "variables_set",
+                    "id": "{1{x~jiXO+!`~=|`nrq|",
+                    "fields": {
+                      "VAR": {
+                        "id": "s@G^mIraTh:a3OVb1#Ld"
+                      }
+                    },
+                    "inputs": {
+                      "VALUE": {
+                        "block": {
+                          "type": "esp32_mqtt_get_message",
+                          "id": "abp{Vums?wr;m)o|ke}}"
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "controls_if",
+                        "id": "K%+vy*l`c.=cnD_5zxQU",
+                        "inputs": {
+                          "IF0": {
+                            "block": {
+                              "type": "logic_compare",
+                              "id": "49}|z%J6w3d_e%lt:1xA",
+                              "fields": {
+                                "OP": "NEQ"
+                              },
+                              "inputs": {
+                                "A": {
+                                  "block": {
+                                    "type": "variables_get",
+                                    "id": "sa*}9$.B4:6i;SNG!a7s",
+                                    "fields": {
+                                      "VAR": {
+                                        "id": "s@G^mIraTh:a3OVb1#Ld"
+                                      }
+                                    }
+                                  }
+                                },
+                                "B": {
+                                  "block": {
+                                    "type": "text",
+                                    "id": "o^)5FI#ES3YRW-hEvGU@",
+                                    "fields": {
+                                      "TEXT": ""
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "DO0": {
+                            "block": {
+                              "type": "text_print",
+                              "id": "UJO-SQ8#d~Og.d}^b|WA",
+                              "fields": {
+                                "NEW_LINE": true
+                              },
+                              "inputs": {
+                                "TEXT": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "id": "ss;5`1{`cl*,/B~jFU{H",
+                                    "fields": {
+                                      "TEXT": "abc"
+                                    }
+                                  },
+                                  "block": {
+                                    "type": "variables_get",
+                                    "id": "}O1BP4cjT@9w_XQ1CI%]",
+                                    "fields": {
+                                      "VAR": {
+                                        "id": "s@G^mIraTh:a3OVb1#Ld"
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "variables_set",
+                                  "id": "3i.D;?%^`^f|8,RD}imS",
+                                  "fields": {
+                                    "VAR": {
+                                      "id": "s@G^mIraTh:a3OVb1#Ld"
+                                    }
+                                  },
+                                  "inputs": {
+                                    "VALUE": {
+                                      "block": {
+                                        "type": "text",
+                                        "id": "kI:-WjW7`RULg))=Bb%k",
+                                        "fields": {
+                                          "TEXT": ""
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "variables": [
+      {
+        "name": "i",
+        "id": "s@G^mIraTh:a3OVb1#Ld"
+      }
+    ]
+  },
+  "board": "esp32"
+}
