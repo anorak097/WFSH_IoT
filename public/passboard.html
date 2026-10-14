@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='Access-Control-Allow-Origin' content='*'>
+    <meta http-equiv='Access-Control-Allow-Credentials' content='true'>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script src='https://riddleling.github.io/SpBlocklyJS/gameelements.js'></script>
+    <script src='https://fustyles.github.io/webduino/SpBlocklyJS/MQTT_20220324/mqtt.min.js'></script>
+    <script src='https://fustyles.github.io/webduino/SpBlocklyJS/chart_20220723/Chart.min.js'></script>
+    <script src='https://fustyles.github.io/webduino/SpBlocklyJS/chart_20220723/pretty-doughtnut.js'></script>
+    <script src='https://fustyles.github.io/webduino/SpBlocklyJS/chart_20220723/jquery.tempgauge.js'></script>
+    <script src='https://fustyles.github.io/webduino/SpBlocklyJS/chart_20220723/jquery.simplegauge.js'></script>
+    <script src='https://riddleling.github.io/SpBlocklyJS/waterbubble.js'></script>
+    <script src='https://fustyles.github.io/webduino/SpBlocklyJS/chart_20220723/linechart.js'></script>
+    <script src='https://fustyles.github.io/webduino/SpBlocklyJS/chart_20220723/barchart.js'></script>
+    <script src='https://fustyles.github.io/webduino/SpBlocklyJS/chart_20220723/jquery.simpleswitch.js'></script>
+    <link href='https://fustyles.github.io/webduino/SpBlocklyJS/chart_20220723/jquery.simplegauge.css' type='text/css' rel='stylesheet'>
+    <link href='https://fustyles.github.io/webduino/SpBlocklyJS/chart_20220723/simpleswitch.css' type='text/css' rel='stylesheet'>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #0f172a;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .aspect-ratio-container {
+            position: relative;
+            width: 100vw;
+            height: 56.25vw;
+            max-height: 100vh;
+            max-width: 177.78vh;
+            background: #f5f7fa;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 1.2vh 1.5vw;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1vh;
+            flex-shrink: 0;
+        }
+
+        h1 {
+            font-size: 1.6vh;
+            color: #2d3748;
+            margin: 0;
+        }
+
+        .reset-btn {
+            background: #e2e8f0;
+            border: none;
+            padding: 0.5vh 1vw;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1vh;
+            color: #4a5568;
+            transition: background 0.2s;
+        }
+
+        .reset-btn:hover {
+            background: #cbd5e0;
+        }
+
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 1vh;
+            flex: 1;
+            min-height: 0;
+        }
+
+        .widget-card {
+            box-sizing: border-box;
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 1vh 1vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-width: 2px;
+            border-style: solid;
+            transition: all 0.3s ease;
+        }
+
+        .widget-card.passed {
+            background: #f0fff4;
+            border-color: rgb(0, 255, 57) !important;
+            box-shadow: 0 4px 12px rgba(0, 255, 57, 0.6);
+        }
+
+        .widget-title {
+            font-size: 3vh;
+            font-weight: 700;
+            color: #4a5568;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status-badge {
+            font-size: 1vh;
+            padding: 0.2vh 0.5vw;
+            border-radius: 4px;
+            background: #edf2f7;
+            color: #718096;
+        }
+
+        .widget-card.passed .status-badge {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+
+        .widget-value {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 1.8vh;
+            font-weight: 700;
+            color: #1a202c;
+            word-break: break-word;
+        }
+
+        .widget-card.passed .widget-value {
+            color: #27672b;
+            font-size: 7vh;
+            font-weight: 900;
+            letter-spacing: 0.1vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="aspect-ratio-container">
+        <div class="header-container">
+            <h1>10/15 作業檢查儀表板</h1>
+            <button class="reset-btn" id="resetLogBtn">清除紀錄 (Reset Log)</button>
+        </div>
+        <div class="dashboard-container" id="app"></div>
+    </div>
+
+    <script>
+        const devices = [
+            { id: '20108' }, { id: '20109' }, { id: '20112' }, { id: '20114' },
+            { id: '20115' }, { id: '20116' }, { id: '20117' }, { id: '20118' },
+            { id: '20119' }, { id: '20120' }, { id: '20121' }, { id: '20122' },
+            { id: '20123' }, { id: '20124' }, { id: '20126' }, { id: '20127' },
+            { id: '20128' }, { id: '20129' }, { id: '20130' }, { id: 'TEST', isTest: true }
+        ];
+
+        const GRADING_TOPIC = "WFSH/IoT/10_15/hw";
+        const STORAGE_KEY = "iot_passed_devices_log";
+
+        const getPassedDevices = () => {
+            const data = localStorage.getItem(STORAGE_KEY);
+            return data ? JSON.parse(data) : {};
+        };
+
+        const savePassedDevice = (deviceId) => {
+            const passed = getPassedDevices();
+            passed[deviceId] = { status: "PASS", time: new Date().toISOString() };
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(passed));
+        };
+
+        const removePassedDevice = (deviceId) => {
+            const passed = getPassedDevices();
+            delete passed[deviceId];
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(passed));
+        };
+
+        const main = async () => {
+            const container = document.getElementById('app');
+            const passedLog = getPassedDevices();
+
+            devices.forEach(dev => {
+                const isPassed = passedLog[dev.id] !== undefined;
+
+                const widget = document.createElement('div');
+                widget.id = `widget_${dev.id}`;
+                widget.className = `widget-card ${isPassed ? 'passed' : ''}`;
+                widget.style.borderColor = '#cbd5e0';
+
+                const titleContainer = document.createElement('div');
+                titleContainer.className = 'widget-title';
+                titleContainer.textContent = dev.id;
+
+                const badge = document.createElement('span');
+                badge.className = 'status-badge';
+                badge.id = `badge_${dev.id}`;
+                badge.textContent = isPassed ? 'PASS' : 'Pending';
+                titleContainer.appendChild(badge);
+
+                const value = document.createElement('div');
+                value.id = `value_${dev.id}`;
+                value.className = 'widget-value';
+                value.textContent = isPassed ? 'PASS' : '--';
+
+                widget.appendChild(titleContainer);
+                widget.appendChild(value);
+                container.appendChild(widget);
+            });
+
+            document.getElementById('resetLogBtn').addEventListener('click', () => {
+                if (confirm('確定要清除所有裝置的通過紀錄嗎？')) {
+                    localStorage.removeItem(STORAGE_KEY);
+                    location.reload();
+                }
+            });
+
+            if (typeof mqtt === "undefined") {
+                console.error("mqtt library not loaded");
+                return;
+            }
+
+            const clientId = "mqtt_" + Math.random().toString(16).substr(2, 8);
+            const options = {
+                keepalive: 60,
+                clientId: clientId,
+                protocolId: "MQTT",
+                protocolVersion: 4,
+                clean: true,
+                reconnectPeriod: 1000,
+                connectTimeout: 30 * 1000
+            };
+
+            var mqtt_client = mqtt.connect("wss://MQTTGO.io:8084/mqtt", options);
+
+            mqtt_client.on("connect", () => {
+                console.log("connected to broker");
+                
+                mqtt_client.subscribe(GRADING_TOPIC);
+                console.log(`已訂閱評分頻道: ${GRADING_TOPIC}`);
+
+                mqtt_client.on("message", async function (topic, payload) {
+                    if (topic === GRADING_TOPIC) {
+                        try {
+                            const msgStr = new TextDecoder().decode(payload).trim();
+
+                            // 處理測試格指令 (test / clear)
+                            if (msgStr === "test") {
+                                savePassedDevice("TEST");
+                                const cardElem = document.getElementById(`widget_TEST`);
+                                const valueElem = document.getElementById(`value_TEST`);
+                                const badgeElem = document.getElementById(`badge_TEST`);
+                                if (cardElem && valueElem && badgeElem) {
+                                    cardElem.classList.add('passed');
+                                    badgeElem.textContent = 'PASS';
+                                    valueElem.textContent = 'PASS';
+                                }
+                                return;
+                            } else if (msgStr === "clear") {
+                                removePassedDevice("TEST");
+                                const cardElem = document.getElementById(`widget_TEST`);
+                                const valueElem = document.getElementById(`value_TEST`);
+                                const badgeElem = document.getElementById(`badge_TEST`);
+                                if (cardElem && valueElem && badgeElem) {
+                                    cardElem.classList.remove('passed');
+                                    badgeElem.textContent = 'Pending';
+                                    valueElem.textContent = '--';
+                                }
+                                return;
+                            }
+                            
+                            // 處理標準 JSON 格式評分訊息
+                            const data = JSON.parse(msgStr);
+                            for (const [devId, status] of Object.entries(data)) {
+                                if (status === "PASS") {
+                                    savePassedDevice(devId);
+                                    
+                                    const cardElem = document.getElementById(`widget_${devId}`);
+                                    const valueElem = document.getElementById(`value_${devId}`);
+                                    const badgeElem = document.getElementById(`badge_${devId}`);
+                                    
+                                    if (cardElem && valueElem && badgeElem) {
+                                        cardElem.classList.add('passed');
+                                        badgeElem.textContent = 'PASS';
+                                        valueElem.textContent = 'PASS';
+                                    }
+                                }
+                            }
+                        } catch (err) {
+                            console.error("解析評分訊息失敗:", err);
+                        }
+                    }
+                });
+            });
+        };
+
+        main();
+    </script>
+</body>
+</html>
