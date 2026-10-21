@@ -904,5 +904,5 @@ routeAlias: w7
 
 ---
 layout: iframe
-url: /passboard.html
+url: ./passboard.html
 ---
