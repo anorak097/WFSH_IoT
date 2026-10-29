@@ -216,12 +216,12 @@
                 container.appendChild(widget);
             });
 
-            document.getElementById('resetLogBtn').addEventListener('click', () => {
-                if (confirm('確定要清除所有裝置的通過紀錄嗎？')) {
-                    localStorage.removeItem(STORAGE_KEY);
-                    location.reload();
-                }
-            });
+            // document.getElementById('resetLogBtn').addEventListener('click', () => {
+            //     if (confirm('確定要清除所有裝置的通過紀錄嗎？')) {
+            //         localStorage.removeItem(STORAGE_KEY);
+            //         location.reload();
+            //     }
+            // });
 
             if (typeof mqtt === "undefined") {
                 console.error("mqtt library not loaded");
