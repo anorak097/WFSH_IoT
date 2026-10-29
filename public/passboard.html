@@ -245,7 +245,7 @@
                 console.log("connected to broker");
                 
                 mqtt_client.subscribe(GRADING_TOPIC);
-                console.log(`已訂閱評分頻道: ${GRADING_TOPIC}`);
+                console.log(`已訂閱評分頻道`);
 
                 mqtt_client.on("message", async function (topic, payload) {
                     if (topic === GRADING_TOPIC) {
