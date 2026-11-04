@@ -1,19 +1,37 @@
 #include <BluetoothSerial.h>
+#include <ESP32Servo.h>
 
 BluetoothSerial bt;
-const int LED = 32;
+
+const int SERVO = 27;   // 伺服馬達的橘色線
+Servo boom;
 
 void setup() {
-  pinMode(LED, OUTPUT);
-  bt.begin("ESP32-Lamp");  // 手機上看到的名字
+  boom.attach(SERVO);
+  boom.write(0);  
+  bt.begin("ESP32-GATE");  // 手機上看到的名字
 }
 
 void loop() {
   if (bt.available()) {
     String cmd = bt.readStringUntil('\n');
     cmd.trim();
-    if (cmd == "on") digitalWrite(LED, HIGH);
-    if (cmd == "off") digitalWrite(LED, LOW);
-    bt.println("LED " + cmd);
+    if (cmd == "open") open();
+    if (cmd == "close") close();
+    bt.println("gate " + cmd);
   }
+}
+
+void open(){
+  for (int a = 0; a <= 90; a++) {
+      boom.write(a);
+      delay(8);
+    }
+}
+
+void close(){
+  for (int a = 90; a >= 0; a--) {
+      boom.write(a);
+      delay(8);
+    }
 }

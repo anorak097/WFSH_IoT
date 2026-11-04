@@ -30,6 +30,7 @@ routeAlias: Outline
     </div>
     <div>
         <h1><Link to="w7">第七周教材</Link></h1>
+        <h1><Link to="w10">第十周教材</Link></h1>
     </div>
 </div>
 
@@ -906,3 +907,30 @@ routeAlias: w7
 layout: iframe
 url: ./passboard.html
 ---
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+routeAlias: w10
+---
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">程式整合</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 60%; padding-right: 20px; box-sizing: border-box;">
+            <h2>
+                整合兩個以上的功能進同一份程式中，<span style="background:#FFE45E; color:black;">需要理解每段程式的作用與程式的基礎架構</span>。<br>
+                以 Arduino 程式為例，有 C/C++ 的<span style="background:#FFE45E; color:black;">引用 (#include) 段落</span>和固定兩個<span style="background:#FFE45E; color:black;">名為 setup() 與 loop() 的函式 (function)</span>。<br>
+                <p v-click="1">簡單來說，要整合多份程式的話：</p><p v-click="2">引用區段放一起</p><p v-click="3">setup() 裡的放一起</p><p v-click="4">loop() 裡的放一起</p>
+            </h2>
+        </div>
+        <div style="width: 40%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <img style="width: 100%; height: auto;" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjWSW1L4jHqO45p529f-2nIpM9oGfmTZEF7HDPSXPEVSxPefi5I7X1jus4ZHG2eG56S4sf5CjYipSprY8YbLZTCm7AQYCfOhI9OMwJgip_J7jtM_nSMXkvTsz2wicBW3bgIPpe4nGWAEkM/s800/copy_and_paste.png">
+        </div>
+    </div>
+</div>

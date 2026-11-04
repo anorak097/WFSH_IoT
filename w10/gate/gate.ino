@@ -2,7 +2,6 @@
 
 const int SERVO = 27;   // 伺服馬達的橘色線
 Servo boom;
-int cars = 0;
 
 void setup() {
   Serial.begin(115200);
