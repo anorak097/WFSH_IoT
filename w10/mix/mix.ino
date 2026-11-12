@@ -23,14 +23,14 @@ void loop() {
 }
 
 void open(){
-  for (int a = 0; a <= 90; a++) {
+  for (int a = 0; a <= 120; a++) {
       boom.write(a);
       delay(8);
     }
 }
 
 void close(){
-  for (int a = 90; a >= 0; a--) {
+  for (int a = 120; a >= 0; a--) {
       boom.write(a);
       delay(8);
     }
