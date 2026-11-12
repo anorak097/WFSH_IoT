@@ -15,8 +15,8 @@
                 "type": "esp32_wifi_connect",
                 "id": "oJT[e+Of;ifiIXsZap(~",
                 "fields": {
-                  "SSID": "Anorak",
-                  "PASSWORD": "vIi1h4CHl"
+                  "SSID": "",
+                  "PASSWORD": ""
                 },
                 "next": {
                   "block": {
@@ -46,7 +46,7 @@
                                 "type": "text",
                                 "id": "t@me)-;+V[m]!IU3Cphb",
                                 "fields": {
-                                  "TEXT": "WIFI: "
+                                  "TEXT": "wifi status"
                                 }
                               }
                             },
@@ -67,7 +67,7 @@
                         "fields": {
                           "SERVER": "mqttgo.io",
                           "PORT": 1883,
-                          "CLIENT_ID": "esp32client"
+                          "CLIENT_ID": ""
                         },
                         "next": {
                           "block": {
@@ -105,7 +105,7 @@
                                             "type": "text",
                                             "id": "=:HfA1l6GH_~mA=9dG]q",
                                             "fields": {
-                                              "TEXT": "MQTT: "
+                                              "TEXT": "MQTT status"
                                             }
                                           }
                                         },
@@ -129,7 +129,7 @@
                                           "type": "text",
                                           "id": "/9L,(F|c64r39ga=r7z]",
                                           "fields": {
-                                            "TEXT": "WFSH/IoT/test/tmp"
+                                            "TEXT": ""
                                           }
                                         }
                                       }
@@ -152,108 +152,23 @@
                 "id": "0oZVL?o+onm]Y2#k4`*A",
                 "next": {
                   "block": {
-                    "type": "variables_set",
-                    "id": "{1{x~jiXO+!`~=|`nrq|",
+                    "type": "text_print",
+                    "id": "UJO-SQ8#d~Og.d}^b|WA",
                     "fields": {
-                      "VAR": {
-                        "id": "s@G^mIraTh:a3OVb1#Ld"
-                      }
+                      "NEW_LINE": true
                     },
                     "inputs": {
-                      "VALUE": {
+                      "TEXT": {
+                        "shadow": {
+                          "type": "text",
+                          "id": "ss;5`1{`cl*,/B~jFU{H",
+                          "fields": {
+                            "TEXT": "abc"
+                          }
+                        },
                         "block": {
                           "type": "esp32_mqtt_get_message",
                           "id": "abp{Vums?wr;m)o|ke}}"
-                        }
-                      }
-                    },
-                    "next": {
-                      "block": {
-                        "type": "controls_if",
-                        "id": "K%+vy*l`c.=cnD_5zxQU",
-                        "inputs": {
-                          "IF0": {
-                            "block": {
-                              "type": "logic_compare",
-                              "id": "49}|z%J6w3d_e%lt:1xA",
-                              "fields": {
-                                "OP": "NEQ"
-                              },
-                              "inputs": {
-                                "A": {
-                                  "block": {
-                                    "type": "variables_get",
-                                    "id": "sa*}9$.B4:6i;SNG!a7s",
-                                    "fields": {
-                                      "VAR": {
-                                        "id": "s@G^mIraTh:a3OVb1#Ld"
-                                      }
-                                    }
-                                  }
-                                },
-                                "B": {
-                                  "block": {
-                                    "type": "text",
-                                    "id": "o^)5FI#ES3YRW-hEvGU@",
-                                    "fields": {
-                                      "TEXT": ""
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          },
-                          "DO0": {
-                            "block": {
-                              "type": "text_print",
-                              "id": "UJO-SQ8#d~Og.d}^b|WA",
-                              "fields": {
-                                "NEW_LINE": true
-                              },
-                              "inputs": {
-                                "TEXT": {
-                                  "shadow": {
-                                    "type": "text",
-                                    "id": "ss;5`1{`cl*,/B~jFU{H",
-                                    "fields": {
-                                      "TEXT": "abc"
-                                    }
-                                  },
-                                  "block": {
-                                    "type": "variables_get",
-                                    "id": "}O1BP4cjT@9w_XQ1CI%]",
-                                    "fields": {
-                                      "VAR": {
-                                        "id": "s@G^mIraTh:a3OVb1#Ld"
-                                      }
-                                    }
-                                  }
-                                }
-                              },
-                              "next": {
-                                "block": {
-                                  "type": "variables_set",
-                                  "id": "3i.D;?%^`^f|8,RD}imS",
-                                  "fields": {
-                                    "VAR": {
-                                      "id": "s@G^mIraTh:a3OVb1#Ld"
-                                    }
-                                  },
-                                  "inputs": {
-                                    "VALUE": {
-                                      "block": {
-                                        "type": "text",
-                                        "id": "kI:-WjW7`RULg))=Bb%k",
-                                        "fields": {
-                                          "TEXT": ""
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
                         }
                       }
                     }

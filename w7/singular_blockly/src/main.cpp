@@ -2,19 +2,17 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
 
-// MQTT 全域變數
+// MQTT global variables
 WiFiClient _wifiClient;
 PubSubClient mqttClient(_wifiClient);
 String lastMqttTopic = "";
 String lastMqttMessage = "";
-const char* _mqttClientId = "esp32client";
+const char* _mqttClientId = "";
 
-int i;
-
-// 函數前向宣告
+// Function forward declarations
 void _mqttCallback(char* topic, byte* payload, unsigned int length);
 
-// MQTT 訊息回調函數
+// MQTT message callback
 void _mqttCallback(char* topic, byte* payload, unsigned int length) {
   lastMqttTopic = String(topic);
   lastMqttMessage = "";
@@ -25,30 +23,26 @@ void _mqttCallback(char* topic, byte* payload, unsigned int length) {
 
 void setup() {
   Serial.begin(9600);
-  // WiFi 連線到 Anorak
+  // Connect WiFi to
   WiFi.mode(WIFI_STA);
   WiFi.setAutoReconnect(true);
-  WiFi.begin("Anorak", "vIi1h4CHl");
+  WiFi.begin("", "");
   unsigned long _wifiStartTime = millis();
   while (WiFi.status() != WL_CONNECTED && millis() - _wifiStartTime < 10000) {
   delay(500);
   }
-  Serial.println(String("WIFI: ") + String((WiFi.status() == WL_CONNECTED)));
-  // MQTT 設定 - 伺服器: mqttgo.io:1883
+  Serial.println(String("wifi status") + String((WiFi.status() == WL_CONNECTED)));
+  // MQTT setup - server: mqttgo.io:1883
   mqttClient.setServer("mqttgo.io", 1883);
   mqttClient.setCallback(_mqttCallback);
-  // MQTT 連線
+  // MQTT connect
   mqttClient.connect(_mqttClientId);
-  Serial.println(String("MQTT: ") + String(mqttClient.connected()));
-  // MQTT 訂閱主題
-  mqttClient.subscribe(String("WFSH/IoT/test/tmp").c_str());
+  Serial.println(String("MQTT status") + String(mqttClient.connected()));
+  // MQTT subscribe
+  mqttClient.subscribe(String("").c_str());
 }
 
 void loop() {
   mqttClient.loop();
-  i = lastMqttMessage;
-  if ((i != "")) {
-  Serial.println(i);
-  i = "";
-  }
+  Serial.println(lastMqttMessage);
 }
