@@ -19,7 +19,7 @@ color: dark
 routeAlias: Outline
 ---
 
-<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem;">
+<div style="font-size: 0.8rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem;">
     <div>
         <h1><Link to="w1">第一周教材</Link></h1>
         <h1><Link to="w2">第二周教材</Link></h1>
@@ -31,6 +31,7 @@ routeAlias: Outline
     <div>
         <h1><Link to="w7">第七周教材</Link></h1>
         <h1><Link to="w10">第十周教材</Link></h1>
+        <h1><Link to="w12">第十二周教材</Link></h1>
     </div>
 </div>
 
@@ -957,6 +958,172 @@ color: dark
         </div>
         <div style="width: 40%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
             <img style="width: 100%; height: auto;" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjWSW1L4jHqO45p529f-2nIpM9oGfmTZEF7HDPSXPEVSxPefi5I7X1jus4ZHG2eG56S4sf5CjYipSprY8YbLZTCm7AQYCfOhI9OMwJgip_J7jtM_nSMXkvTsz2wicBW3bgIPpe4nGWAEkM/s800/copy_and_paste.png">
+        </div>
+    </div>
+</div>
+
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+routeAlias: w12
+---
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">判斷邏輯</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 60%; padding-right: 20px; box-sizing: border-box;">
+            <h2>
+                在決定一件事情時，通常不會只依靠單一條件就能定案。<br>例如上周的 Blockly 遊戲：小鳥 - 第八關
+            </h2><br>
+            <img style="width: 100%; height: auto;" src="./public/bird-8-sol.png" v-click="1">
+        </div>
+        <div style="width: 40%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <img style="width: 100%; height: auto;" src="./public/bird-8.png">
+        </div>
+    </div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">判斷邏輯</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 40%; padding-right: 20px; box-sizing: border-box;">
+            <h2>
+                設計物聯網等程式邏輯時，核心在於針對多維度的環境條件，確立「單一情境對單一行為」的明確映射關係；以數學語言描述，就是針對所有輸入變數的狀態組合，窮舉並求解出完整的輸出空間。
+            </h2>
+        </div>
+        <div style="width: 50%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <table>
+                <thead>
+                    <tr>
+                    <th>A (還沒吃到蟲)</th>
+                    <th>B (x &lt; 50)</th>
+                    <th>C (y &lt; 50)</th>
+                    <th>方向</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>右上</td>
+                    </tr>
+                    <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>左上</td>
+                    </tr>
+                    <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>不做動作</td>
+                    </tr>
+                    <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>不做動作</td>
+                    </tr>
+                    <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>右下</td>
+                    </tr>
+                    <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>不做動作</td>
+                    </tr>
+                    <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>不做動作</td>
+                    </tr>
+                    <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>右上</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">現實生活中的例外</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 60%; padding-right: 20px; box-sizing: border-box;">
+            <h2>
+                但我們來看一個例子
+            </h2>
+            <table>
+                <thead>
+                    <tr>
+                    <th>溫度 (&gt;26°C)</th>
+                    <th>濕度 (&gt;70%)</th>
+                    <th>行為</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>不開冷氣</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>開除濕 / 送風</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>開冷氣（低風速）</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>開冷氣（強力運轉）</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2 v-click="1">室溫 25.9°C、濕度 88%<br>室溫 32°C、濕度 55%<br>感受看看，原先的邏輯合理嗎?</h2>
+        </div>
+        <div style="width: 40%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <img style="width: 100%; height: auto;" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlDzi0cq7pccEy403bZD1Sh8Snnt9dTYNOwCHvALQNZpfTwVMSgrX3z5b6Nyis-tu13thcuoU-Vdz_PYmsjTg3OWYm4ccgBCnVpZZyzyYeMAYHqw77LXfyiEt-MuRx6tk9o6UOUAG5HHw/s800/setsuden_airconditioner_man.png">
         </div>
     </div>
 </div>
