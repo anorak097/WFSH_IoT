@@ -1127,3 +1127,43 @@ color: dark
         </div>
     </div>
 </div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">模糊控制</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 60%; padding-right: 20px; box-sizing: border-box;">
+            <h2>
+                模糊控制 (Fuzzy Control) 的做法，是先將原本非冷即熱的大分類拆解為平滑的漸層區間，以 0 ~ 1 的小數量化「有多冷或多熱」；接著結合濕度的程度比例進行綜合評估，最終推算出最貼近體感需求的冷氣功率。
+                <br>
+                這項技術早期便廣泛落地於民生與交通領域，例如智慧家電（洗衣機、冷氣）以及日本仙台地下鐵的<a href="https://doi.org/10.1109/AIIA.1988.13336">電車自動駕駛系統</a>，都是模糊控制的經典代表。
+            </h2>
+        </div>
+        <div style="width: 40%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+            <img style="width: 100%; height: auto;" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlDzi0cq7pccEy403bZD1Sh8Snnt9dTYNOwCHvALQNZpfTwVMSgrX3z5b6Nyis-tu13thcuoU-Vdz_PYmsjTg3OWYm4ccgBCnVpZZyzyYeMAYHqw77LXfyiEt-MuRx6tk9o6UOUAG5HHw/s800/setsuden_airconditioner_man.png">
+        </div>
+    </div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">冷氣的例子</h1>
+
+::content::
+
+<FuzzyAcDemo />
+
