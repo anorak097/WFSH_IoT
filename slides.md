@@ -979,7 +979,7 @@ routeAlias: w12
     <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
         <div style="width: 60%; padding-right: 20px; box-sizing: border-box;">
             <h2>
-                在決定一件事情時，通常不會只依靠單一條件就能定案。<br>例如上周的 Blockly 遊戲：小鳥 - 第八關
+                在決定一件事情時，通常不會只依靠單一條件就能定案。<br>例如 Blockly 遊戲：小鳥 - 第八關
             </h2><br>
             <img style="width: 100%; height: auto;" src="./public/bird-8-sol.png" v-click="1">
         </div>
@@ -1167,3 +1167,260 @@ color: dark
 
 <FuzzyAcDemo />
 
+---
+transition: slide-left
+layout: top-title
+color: dark
+routeAlias: w13
+---
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">物聯網的下一階段</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 50%; padding-right: 20px; box-sizing: border-box;">
+            <h2>傳統物聯網聚焦於「區域性自動化」(如空調控溫、自動窗簾)，其運作高度仰賴人工預設的<span style="background:#FFE45E; color:black;">數位邏輯與專家系統</span>。然而，面對日益複雜的環境變數與多元的使用需求，僅憑固定規則已難以做到精準的動態調整。<br>為突破這項瓶頸，業界開始<span style="background:#FFE45E; color:black;">將 AI 的自主判斷能力</span>部署於終端裝置，這股趨勢也催生了「邊緣 AI (Edge AI)」。</h2>
+        </div>
+        <div style="width: 50%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+        <a data-flickr-embed="true" href="https://www.flickr.com/photos/dullhunk/7214525854" title="Engineering flowchart 🔨 Does it Move? Should it? #WD40 vs. Duct Tape (original artist unknown)" style="display: flex; justify-content: left; align-items: center; height: 100%; width: 100%;">
+            <img src="https://live.staticflickr.com/8160/7214525854_733237dd83_z.jpg" alt="Engineering flowchart 🔨 Does it Move? Should it? #WD40 vs. Duct Tape (original artist unknown)" style="height: auto; width: auto; object-fit: contain; display: block;" />
+        </a>
+        專家系統示意圖
+        </div>
+    </div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">機器學習?</h1>
+
+::content::
+
+<h2>機器學習的出現解決了專家系統的缺點，<span style="background:#FFE45E; color:black;">給予機器處理過的資料進行學習</span>。<span v-click="2">後續又衍生出了<span style="background:#FFE45E; color:black;">模仿人類大腦運作模式</span>以讓機器<span style="background:#FFE45E; color:black;">自行處理資料並學習</span>的深度學習。</span></h2>
+<Admonition title="Note" width="100%" icon="pixel:notebook" color=cyan-light>
+    <h2 style="font-size: 2rem;">人工智慧 <span style="font-size: 1.5rem;">在機器中模擬或複製人類智慧。</span></h2>
+    <Admonition title="Note" width="auto" style="margin-left: 50px;" v-click="1" icon="pixel:notebook" color=blue-light>
+        <h2 style="font-size: 2rem;">機器學習 (Machine Learning)</h2>
+        <h2>讓機器從資料中學習，準確執行特定工作。</h2>
+        <Admonition title="Note" width="auto" style="margin-left: 50px;" v-click="2" icon="pixel:notebook" color=indigo-light>
+            <h2 style="font-size: 2rem;">深度學習 (Deep Learning)</h2>
+            <h2>自動從資料中學習特徵，藉此提高準確度並處理更複雜的模式 </h2>
+        </Admonition>
+    </Admonition>
+</Admonition>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">機器學習?</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;">
+        <div style="width: 60%; padding-right: 20px; box-sizing: border-box;">
+            <h2> 人類學習：
+
+```mermaid
+flowchart LR
+    A1[規則與例題] --> A2((人類)) --> A3[規則 / 知識]
+```
+
+程式設計：
+
+```mermaid
+flowchart LR
+    B1[資料與規則] --> B2((程式)) --> B3[結果]
+```
+
+機器學習：
+
+```mermaid
+flowchart LR
+    C1[資料與正確結果] --> C2((機器學習
+    演算法)) --> C3[規則 / 模型]
+```
+            
+</h2>
+		</div>
+        <div style="width: 40%; box-sizing: border-box;">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2dvuvi_VSVGkzORLeRYSzJid_WnW87vr8evE0R3UsfUvf-Mp5A9Ck5A6z5Nf8MwklomuG4s8lBtqE0EMieboxTAhyphenhyphenXzN8OGY_DfnFhsA_adweiu-CyYNWHRPrEf9rQ2C2-FAl6h2cTJfB/s800/ai_study_kikaigakusyu.png">
+		</div>
+	</div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">機器如何學習?</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;">
+        <div style="width: 60%; padding-right: 20px; box-sizing: border-box;">
+            <h2>簡單來說，機器學習就是拿輸入和輸出回推過程，以攝氏溫標與華氏溫標為例。</h2>
+            <script setup>
+                import { ref } from 'vue'
+                const copied = ref(false)
+                const rawData = `0	32
+10	50
+20	68
+25	77
+30	86
+35	95
+40	104
+50	122
+100	212
+-10	14`
+                const copyData = () => {
+                navigator.clipboard.writeText(rawData)
+                copied.value = true
+                setTimeout(() => copied.value = false, 2000)
+                }
+            </script>
+<a href="https://www.graphpad.com/quickcalcs/linear1/">體驗網站 (Ⅰ)</a><div style="margin-top: 20px;">
+  <button @click="copyData" style="background: rgba(255, 255, 255, 0.1); color: #ccc; border: 1px solid rgba(255, 255, 255, 0.2); padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85em; font-family: monospace;">
+    {{ copied ? '已複製' : '複製資料' }}
+  </button>
+</div>
+            <h2><br>理論上，資料越多，機器歸納出的規則/模型就越好。</h2>
+            <a href="https://quickdraw.withgoogle.com">體驗網站 (Ⅱ)</a>
+		</div>
+        <div style="width: 40%; box-sizing: border-box;">
+            <table style="background: rgba(255, 255, 255, 0.05); color: #fff; border-collapse: collapse; font-family: monospace; font-size: 0.9em;">
+    <thead>
+        <tr>
+            <th style="padding: 6px 16px; border-bottom: 1px solid rgba(255,255,255,0.2); text-align: left;">℃</th>
+            <th style="padding: 6px 16px; border-bottom: 1px solid rgba(255,255,255,0.2); text-align: left;">℉</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="padding: 4px 16px;">0</td>
+            <td style="padding: 4px 16px;">32</td>
+        </tr>
+        <tr>
+            <td style="padding: 4px 16px;">10</td>
+            <td style="padding: 4px 16px;">50</td>
+        </tr>
+        <tr>
+            <td style="padding: 4px 16px;">20</td>
+            <td style="padding: 4px 16px;">68</td>
+        </tr>
+        <tr>
+            <td style="padding: 4px 16px;">25</td>
+            <td style="padding: 4px 16px;">77</td>
+        </tr>
+        <tr>
+            <td style="padding: 4px 16px;">30</td>
+            <td style="padding: 4px 16px;">86</td>
+        </tr>
+        <tr>
+            <td style="padding: 4px 16px;">35</td>
+            <td style="padding: 4px 16px;">95</td>
+        </tr>
+        <tr>
+            <td style="padding: 4px 16px;">40</td>
+            <td style="padding: 4px 16px;">104</td>
+        </tr>
+        <tr>
+            <td style="padding: 4px 16px;">50</td>
+            <td style="padding: 4px 16px;">122</td>
+        </tr>
+        <tr>
+            <td style="padding: 4px 16px;">100</td>
+            <td style="padding: 4px 16px;">212</td>
+        </tr>
+        <tr>
+            <td style="padding: 4px 16px;">-10</td>
+            <td style="padding: 4px 16px;">14</td>
+        </tr>
+    </tbody>
+</table>
+        </div>
+	</div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">機器學習的弱點?</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;">
+        <div style="width: 60%; padding-right: 20px; box-sizing: border-box;">
+            <h2>從 Quick Draw! 的體驗中，我們可以大致得知：機器在影像辨識上，主要仰賴的是「特徵」。<br>
+            接下來，試試 Google 推出的機器學習工具 Teachable Machine。主題限定為形狀、顏色等外觀相近的不同事物。<br>例如：<a href="https://www.freecodecamp.org/news/chihuahua-or-muffin-my-search-for-the-best-computer-vision-api-cbda4d6b425d/">吉娃娃 & 葡萄乾馬芬</a>、<a href="https://today.line.me/tw/v3/article/ROPEXw">貴賓狗 & 炸雞</a></h2>
+		</div>
+        <div style="width: 40%; box-sizing: border-box;">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEin_b5LhyeYSIgVjFCFJofWGihwfekPhVzYgh6nKvkB-_u_k8Nc3BtXdvGNcLEeMa4i8opPvdEY8H0Uzi4ZnVkf-n4PsrTzq7xOh5RoetP0SF2E5me1vlxGlOfKsVRoKxqifewWUQ7ysKSu/s800/ai_computer_sousa_robot.png">
+		</div>
+	</div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 3rem; padding-top: 10px; padding-bottom: 10px; font-weight: bold;  display: flex; justify-content: space-between;">
+   <span>深度學習</span><span style="font-size: 2rem; color: gray;">形式上更加模仿人類的機器學習</span>
+</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; box-sizing: border-box;">
+        <div style="width: 60%; padding-right: 20px; box-sizing: border-box;">
+            <h2>深度學習是透過類神經網路 (Neural Network) 模擬大腦神經運作，利用多層次結構自動從資料中萃取特徵與規律。而在處理圖像辨識時，表現最為出色的經典架構就是 CNN (Convolutional Neural Network, 卷積神經網路)，我們透過一個實際範例來看看它是如何運作的。
+            </h2><br><a href="https://poloclub.github.io/cnn-explainer/">CNN 範例 (Ⅱ)</a>
+		</div>
+    <script setup>
+import { onMounted } from 'vue'
+onMounted(() => {
+  // 動態載入 Instagram 嵌入腳本
+  if (!document.querySelector('script[src*="instagram.com/embed.js"]')) {
+    const script = document.createElement('script')
+    script.src = '//www.instagram.com/embed.js'
+    script.async = true
+    document.body.appendChild(script)
+  } else if (window.instgrm) {
+    // 如果腳本已存在，手動觸發 IG 重新掃描渲染
+    window.instgrm.Embeds.process()
+  }
+})
+</script>
+        <div style="width: 40%; box-sizing: border-box; margin: auto;">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DFsMvixsAO5/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+            </blockquote>
+        </div>
+	</div>
+</div>
