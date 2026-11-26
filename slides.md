@@ -32,6 +32,7 @@ routeAlias: Outline
         <h1><Link to="w7">第七周教材</Link></h1>
         <h1><Link to="w10">第十周教材</Link></h1>
         <h1><Link to="w12">第十二周教材</Link></h1>
+        <h1><Link to="w13">第十三周教材</Link></h1>
     </div>
 </div>
 
@@ -1296,13 +1297,13 @@ color: dark
                 setTimeout(() => copied.value = false, 2000)
                 }
             </script>
-<a href="https://www.graphpad.com/quickcalcs/linear1/">體驗網站 (Ⅰ)</a><div style="margin-top: 20px;">
+體驗網站 (Ⅰ): <a href="https://www.graphpad.com/quickcalcs/linear1/">Liner Regulation Calculator</a><div style="margin-top: 20px;">
   <button @click="copyData" style="background: rgba(255, 255, 255, 0.1); color: #ccc; border: 1px solid rgba(255, 255, 255, 0.2); padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85em; font-family: monospace;">
     {{ copied ? '已複製' : '複製資料' }}
   </button>
 </div>
             <h2><br>理論上，資料越多，機器歸納出的規則/模型就越好。</h2>
-            <a href="https://quickdraw.withgoogle.com">體驗網站 (Ⅱ)</a>
+            體驗網站 (Ⅱ): <a href="https://quickdraw.withgoogle.com">Quick Draw!</a>
 		</div>
         <div style="width: 40%; box-sizing: border-box;">
             <table style="background: rgba(255, 255, 255, 0.05); color: #fff; border-collapse: collapse; font-family: monospace; font-size: 0.9em;">
@@ -1374,8 +1375,8 @@ color: dark
 <div style="margin-bottom: 10px;">
     <div style="width: 100%; display: flex; align-items: center; box-sizing: border-box;">
         <div style="width: 60%; padding-right: 20px; box-sizing: border-box;">
-            <h2>從 Quick Draw! 的體驗中，我們可以大致得知：機器在影像辨識上，主要仰賴的是「特徵」。<br>
-            接下來，試試 Google 推出的機器學習工具 Teachable Machine。主題限定為形狀、顏色等外觀相近的不同事物。<br>例如：<a href="https://www.freecodecamp.org/news/chihuahua-or-muffin-my-search-for-the-best-computer-vision-api-cbda4d6b425d/">吉娃娃 & 葡萄乾馬芬</a>、<a href="https://today.line.me/tw/v3/article/ROPEXw">貴賓狗 & 炸雞</a></h2>
+            <h2>從 Quick Draw! 的體驗中，我們可以大致得知：機器<span style="background:#FFE45E; color:black;">在影像辨識上，主要仰賴的是「特徵」</span>。<br>
+            接下來，試試 Google 推出的機器學習工具 <a href="https://teachablemachine.withgoogle.com/">Teachable Machine</a>。主題限定為形狀、顏色等外觀相近的不同事物。<br>例如：<a href="https://www.freecodecamp.org/news/chihuahua-or-muffin-my-search-for-the-best-computer-vision-api-cbda4d6b425d/">吉娃娃 & 葡萄乾馬芬</a>、<a href="https://today.line.me/tw/v3/article/ROPEXw">貴賓狗 & 炸雞</a></h2>
 		</div>
         <div style="width: 40%; box-sizing: border-box;">
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEin_b5LhyeYSIgVjFCFJofWGihwfekPhVzYgh6nKvkB-_u_k8Nc3BtXdvGNcLEeMa4i8opPvdEY8H0Uzi4ZnVkf-n4PsrTzq7xOh5RoetP0SF2E5me1vlxGlOfKsVRoKxqifewWUQ7ysKSu/s800/ai_computer_sousa_robot.png">
@@ -1391,17 +1392,15 @@ color: dark
 
 ::title::
 
-<h1 style="font-size: 3rem; padding-top: 10px; padding-bottom: 10px; font-weight: bold;  display: flex; justify-content: space-between;">
-   <span>深度學習</span><span style="font-size: 2rem; color: gray;">形式上更加模仿人類的機器學習</span>
-</h1>
+<h1 style="font-size: 2.5rem; font-weight: bold;">深度學習?</h1>
 
 ::content::
 
 <div style="margin-bottom: 10px;">
     <div style="width: 100%; display: flex; box-sizing: border-box;">
         <div style="width: 60%; padding-right: 20px; box-sizing: border-box;">
-            <h2>深度學習是透過類神經網路 (Neural Network) 模擬大腦神經運作，利用多層次結構自動從資料中萃取特徵與規律。而在處理圖像辨識時，表現最為出色的經典架構就是 CNN (Convolutional Neural Network, 卷積神經網路)，我們透過一個實際範例來看看它是如何運作的。
-            </h2><br><a href="https://poloclub.github.io/cnn-explainer/">CNN 範例 (Ⅱ)</a>
+            <h2>深度學習是透過<span style="background:#FFE45E; color:black;">類神經網路 (Neural Network)</span> 模擬大腦神經運作，利用多層次結構自動從資料中萃取特徵與規律。而在處理圖像辨識時，表現最為出色的經典架構就是 <span style="background:#FFE45E; color:black;">CNN (Convolutional Neural Network, 卷積神經網路)</span>，我們透過一個實際範例來看看它是如何運作的。
+            </h2><br><a href="https://poloclub.github.io/cnn-explainer/">CNN Explainer</a>
 		</div>
     <script setup>
 import { onMounted } from 'vue'
