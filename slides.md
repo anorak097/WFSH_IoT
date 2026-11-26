@@ -1399,7 +1399,7 @@ color: dark
 <div style="margin-bottom: 10px;">
     <div style="width: 100%; display: flex; box-sizing: border-box;">
         <div style="width: 60%; padding-right: 20px; box-sizing: border-box;">
-            <h2>深度學習是透過<span style="background:#FFE45E; color:black;">類神經網路 (Neural Network)</span> 模擬大腦神經運作，利用多層次結構自動從資料中萃取特徵與規律。而在處理圖像辨識時，表現最為出色的經典架構就是 <span style="background:#FFE45E; color:black;">CNN (Convolutional Neural Network, 卷積神經網路)</span>，我們透過一個實際範例來看看它是如何運作的。
+            <h2>深度學習是機器學習的一個分支，透過<span style="background:#FFE45E; color:black;">類神經網路 (Neural Network)</span> 模擬大腦神經運作，利用多層次結構自動從資料中萃取特徵與規律。而在處理圖像辨識時，表現最為出色的經典架構就是 <span style="background:#FFE45E; color:black;">CNN (Convolutional Neural Network, 卷積神經網路)</span>，我們透過一個實際範例來看看它是如何運作的。
             </h2><br><a href="https://poloclub.github.io/cnn-explainer/">CNN Explainer</a>
 		</div>
     <script setup>
@@ -1422,4 +1422,29 @@ onMounted(() => {
             </blockquote>
         </div>
 	</div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 2.5rem; font-weight: bold;">機器學習的應用</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 50%; padding-right: 20px; box-sizing: border-box;">
+            <h2><span style="background:#FFE45E; color:black;"></span>現今機器學習在影像辨識領域的常見應用包括：利用物件辨識實現科技執法，以及結合物件辨識與文字辨識，實現車牌辨識的自助停車等。</h2>
+            Google 推出的機器學習框架: <br><a href="https://developers.google.com/edge/mediapipe/solutions/vision/object_detector">MediaPipe</a><br><a href="https://developers.google.com/edge/mediapipe/solutions/vision/object_detector">MediaPipe 網頁版</a>
+        </div>
+        <div style="width: 50%; display: flex; flex-direction: column; align-items: center; text-align: center; box-sizing: border-box;">
+        <p><a href="https://commons.wikimedia.org/wiki/File:Detected-with-YOLO--Schreibtisch-mit-Objekten.jpg#/media/File:Detected-with-YOLO--Schreibtisch-mit-Objekten.jpg"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Detected-with-YOLO--Schreibtisch-mit-Objekten.jpg/1280px-Detected-with-YOLO--Schreibtisch-mit-Objekten.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Detected-with-YOLO--Schreibtisch-mit-Objekten.jpg" height="823" width="1280"></a><br>By (<a href="//commons.wikimedia.org/wiki/User:MTheiler" title="User:MTheiler">MTheiler</a>) - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/Special:Redirect/page/75843378">Link</a></p>
+        使用 YOLOv3 進行物件識別的範例
+        </div>
+    </div>
 </div>
